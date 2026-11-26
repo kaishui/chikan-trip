@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赤坎古镇 · 两天一夜亲子游规划</title>
+<style>
+  :root{
+    --bg:#f7f2ea;
+    --card:#fffdf9;
+    --ink:#2c2620;
+    --sub:#6b5d4f;
+    --red:#b8432f;
+    --red-deep:#93311f;
+    --gold:#c99a3f;
+    --line:#e8dcc9;
+    --green:#4f7a52;
+    --blue:#3a6b8f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--red);text-decoration:none}
+
+  .crosslink{display:block;max-width:860px;margin:16px auto 0;padding:0 18px}
+  .crosslink a{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink);transition:.15s}
+  .crosslink a:hover{border-color:var(--red);transform:translateY(-1px)}
+  .crosslink .arrow{color:var(--red);font-weight:800}
+
+  /* hero */
+  .hero{
+    background:linear-gradient(150deg,#7a2c1b 0%,#b8432f 55%,#c9673f 100%);
+    color:#fff;padding:56px 20px 48px;text-align:center;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.10),transparent 40%),
+               radial-gradient(circle at 80% 80%,rgba(255,255,255,.08),transparent 45%);
+    pointer-events:none;
+  }
+  .hero .badge{
+    display:inline-block;font-size:13px;letter-spacing:.2em;padding:6px 14px;
+    border:1px solid rgba(255,255,255,.5);border-radius:999px;margin-bottom:20px;
+    position:relative;z-index:1;
+  }
+  .hero h1{font-size:clamp(26px,5vw,42px);font-weight:800;letter-spacing:.02em;position:relative;z-index:1}
+  .hero .route{margin-top:14px;font-size:16px;opacity:.95;position:relative;z-index:1}
+  .hero .route b{font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px;position:relative;z-index:1}
+  .chip{
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);
+    padding:8px 16px;border-radius:12px;font-size:14px;backdrop-filter:blur(4px);
+  }
+  .chip b{font-weight:700}
+
+  /* nav */
+  .nav{
+    position:sticky;top:0;z-index:20;background:rgba(247,242,234,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+    display:flex;gap:4px;overflow-x:auto;padding:10px 14px;
+    scrollbar-width:none;
+  }
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{
+    flex:0 0 auto;font-size:13.5px;color:var(--sub);padding:6px 12px;border-radius:999px;
+    white-space:nowrap;transition:.15s;
+  }
+  .nav a:hover{background:var(--red);color:#fff}
+
+  .wrap{max-width:860px;margin:0 auto;padding:26px 18px 60px}
+
+  section{margin-bottom:30px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 22px;box-shadow:0 2px 10px rgba(120,90,50,.05)}
+  h2{
+    font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:18px;
+  }
+  h2 .num{
+    display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;
+    background:var(--red);color:#fff;border-radius:9px;font-size:15px;font-weight:800;padding:0 7px;
+  }
+  h3{font-size:16px;font-weight:700;margin:18px 0 8px;color:var(--ink)}
+  p{margin:8px 0;color:var(--ink)}
+  .muted{color:var(--sub);font-size:14px}
+
+  .lead{font-size:15.5px}
+
+  /* callout */
+  .callout{
+    border-left:4px solid var(--gold);background:#fdf6e6;border-radius:0 12px 12px 0;
+    padding:14px 16px;margin:14px 0;font-size:14.5px;
+  }
+  .callout.warn{border-left-color:var(--red);background:#fbeae6}
+  .callout.info{border-left-color:var(--blue);background:#eaf2f7}
+
+  /* table */
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;background:var(--card);border-radius:12px;overflow:hidden}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:12px 0}
+  .tbl-wrap table{margin:0;border:none}
+  th{background:#f1e8d8;color:#5b4a33;text-align:left;font-weight:700;padding:10px 12px;white-space:nowrap;font-size:13.5px}
+  td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#fbf7ef}
+  td b,td strong{color:var(--ink)}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:700;white-space:nowrap}
+  .tag.rec{background:#f3e3d8;color:var(--red-deep)}
+  .tag.no{background:#e7e0d6;color:#7a6f5f}
+  .tag.good{background:#e4efe2;color:var(--green)}
+
+  /* timeline */
+  .tl{position:relative;padding-left:26px;margin:8px 0 4px}
+  .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .tl-item{position:relative;padding:0 0 16px 12px}
+  .tl-item::before{
+    content:"";position:absolute;left:-22px;top:6px;width:12px;height:12px;border-radius:50%;
+    background:var(--card);border:3px solid var(--red);
+  }
+  .tl-item.rest::before{border-color:var(--gold);background:var(--gold)}
+  .tl-item.food::before{border-color:var(--green)}
+  .tl-time{font-weight:800;color:var(--red);font-size:14px;letter-spacing:.02em}
+  .tl-item.rest .tl-time{color:#b8862e}
+  .tl-item.food .tl-time{color:var(--green)}
+  .tl-title{font-weight:700;margin:2px 0 2px}
+  .tl-desc{font-size:14px;color:var(--sub)}
+  .tl-desc b{color:var(--ink)}
+
+  /* checklist */
+  .ck{list-style:none}
+  .ck li{position:relative;padding:7px 0 7px 34px;font-size:14.5px;border-bottom:1px dashed var(--line)}
+  .ck li:last-child{border-bottom:none}
+  .ck input{position:absolute;left:0;top:10px;width:20px;height:20px;accent-color:var(--red);cursor:pointer}
+  .ck label{cursor:pointer;display:block}
+  .ck input:checked + label{color:#9a8f80;text-decoration:line-through}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .stat .v{font-size:24px;font-weight:800;color:var(--red)}
+  .stat .k{font-size:12.5px;color:var(--sub);margin-top:2px}
+
+  .totalfoot{
+    background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;
+    border-radius:14px;padding:20px 22px;margin-top:14px;font-size:15px;
+  }
+  .totalfoot b{font-size:22px}
+
+  footer{text-align:center;color:var(--sub);font-size:12.5px;padding:30px 18px 40px;border-top:1px solid var(--line);margin-top:10px}
+
+  @media print{
+    .nav,.hero,.crosslink{display:none}
+    body{background:#fff}
+    .card,.tbl-wrap,.stat{box-shadow:none;border-color:#ddd}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="badge">家庭出行 · 两天一夜</span>
+  <h1>赤坎古镇亲子游规划</h1>
+  <div class="route">广州 <b>番禺</b> → 江门开平 <b>赤坎华侨古镇</b></div>
+  <div class="chips">
+    <span class="chip">成员 <b>5 人</b>（2 大 · 1 老 · 2 小）</span>
+    <span class="chip">日期 <b>11/28 – 11/29</b></span>
+    <span class="chip">方式 <b>自驾</b> 133 km</span>
+    <span class="chip">预算 <b>≈ 2800–3300 元</b></span>
+  </div>
+</div>
+
+<div class="crosslink">
+  <a href="https://kaishui.github.io/chikan-trip/"><span class="arrow">←</span> 返回周末出游合集首页</a>
+  <a href="https://kaishui.github.io/chikan-trip/lianzhou.html"><span class="arrow">→</span> 连州地下河攻略（溶洞 + 江景，车程 3.5 小时）</a>
+  <a href="https://kaishui.github.io/chikan-trip/heyuan.html"><span class="arrow">→</span> 河源客天下温泉攻略（温泉 + 欧式庄园，车程 2 小时 10 分）</a>
+  <a href="https://kaishui.github.io/chikan-trip/zhaoqing.html"><span class="arrow">→</span> 肇庆七星岩 + 鼎湖山攻略（5A 山水慢游，车程约 2 小时）</a>
+  <a href="https://kaishui.github.io/chikan-trip/qingyuan.html"><span class="arrow">→</span> 清远佛冈熹乐谷温泉攻略（温泉 + 无动力乐园，车程约 1.5 小时）</a>
+</div>
+
+<nav class="nav">
+  <a href="#judge">核心判断</a>
+  <a href="#date">日期</a>
+  <a href="#traffic">交通</a>
+  <a href="#hotel">住宿</a>
+  <a href="#ticket">票务</a>
+  <a href="#plan">行程</a>
+  <a href="#show">演艺</a>
+  <a href="#food">美食</a>
+  <a href="#pack">装备</a>
+  <a href="#budget">预算</a>
+  <a href="#risk">预案</a>
+  <a href="#check">清单</a>
+</nav>
+
+<div class="wrap">
+
+  <section id="judge">
+    <div class="card">
+      <h2><span class="num">1</span>三个关键判断</h2>
+      <p class="lead">带 11 个月婴儿 + 61 岁老人，成败不在“去了多少地方”，而在<strong>节奏是否被打断</strong>。</p>
+      <table>
+        <tr><th style="width:22%">判断</th><th>做法</th><th>为什么</th></tr>
+        <tr><td><b>① 住景区内</b></td><td>订度假区内的酒店</td><td>婴儿午睡、老人腿酸、夜场怕吵要撤，都靠“5 分钟回房”。住镇上来回接驳 20 分钟，一天就废了</td></tr>
+        <tr><td><b>② 砍掉碉楼</b></td><td>不去立园 / 自力村</td><td>田埂路推车进不去、碉楼要爬窄梯，老人抱婴儿基本玩不了</td></tr>
+        <tr><td><b>③ 重头戏放 18 点后</b></td><td>12:00–15:30 留给酒店</td><td>正午最晒最累，婴儿必须睡、老人必须歇；赤坎精华（打铁花、灯光、摇橹船落日）本就在傍晚</td></tr>
+      </table>
+      <div class="callout info">住景区内还有一个隐形福利：退房当天人脸识别有效期到 <b>18:00</b>，第二天退房后还能继续刷脸进出，等于多送半天。</div>
+    </div>
+  </section>
+
+  <section id="date">
+    <div class="card">
+      <h2><span class="num">2</span>日期与天气</h2>
+      <p class="muted">开平 12 月初昼夜温差大（白天 25℃、夜里 13℃），且有几段连续降雨。</p>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>日期</th><th>天气</th><th>气温</th><th>建议</th></tr>
+          <tr><td><b>11/28（六）–11/29（日）</b></td><td>多云转晴</td><td>13–26℃</td><td><span class="tag rec">首选</span> 周末但非节假日，天气最稳</td></tr>
+          <tr><td>11/30（一）–12/1（二）</td><td>多云</td><td>15–25℃</td><td><span class="tag good">次选</span> 人少房价低，演艺场次可能缩减</td></tr>
+          <tr><td>12/3 起（四）</td><td>连续小雨 4–5 天</td><td>14–28℃</td><td><span class="tag no">避开</span> 石板湿滑 + 婴儿车难推 + 打铁花可能取消</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="traffic">
+    <div class="card">
+      <h2><span class="num">3</span>怎么去：自驾</h2>
+      <div class="grid2" style="margin-bottom:14px">
+        <div class="stat"><div class="v">133 km</div><div class="k">单程距离</div></div>
+        <div class="stat"><div class="v">1h45m</div><div class="k">预计车程</div></div>
+      </div>
+      <table>
+        <tr><th>方式</th><th>时长</th><th>成本（5 人往返）</th><th>评价</th></tr>
+        <tr><td><b>自驾</b> <span class="tag rec">推荐</span></td><td>1 小时 45 分</td><td>过路费 65×2 + 油费 ≈ 160，约 <b>290–320 元</b></td><td>婴儿座椅、婴儿车、奶粉尿不湿全装车，门到门</td></tr>
+        <tr><td>高铁</td><td>广州南→开平南 40 分</td><td>约 60×4 + 打车</td><td>到站还要打车 15–20 分；5 人 + 婴儿车 + 行李转乘折腾</td></tr>
+      </table>
+      <h3>自驾要点</h3>
+      <ul class="ck" style="list-style:none">
+        <li style="padding-left:20px">路线：番禺 → G1508 广州绕城 → 九江立交 → G15 沈海 → 沈海出口 → S534 → 赤坎大道 → X557，大半三车道。</li>
+        <li style="padding-left:20px">导航设「<b>赤坎华侨古镇北门停车场（住宿接待中心）</b>」，住宿客人走北门，免费停车一次，酒店派接驳车接人接行李。</li>
+        <li style="padding-left:20px"><b>早上 7:30 前出发</b>：避开番禺早高峰，婴儿正好在车上睡一觉。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="hotel">
+    <div class="card">
+      <h2><span class="num">4</span>住宿：5 个人怎么住</h2>
+      <p><b>订 2 间相邻房：</b></p>
+      <table>
+        <tr><th style="width:20%">房间</th><th>住谁</th><th>房型</th></tr>
+        <tr><td><b>房 A</b></td><td>妈妈 + 7 岁女孩 + 婴儿</td><td>家庭房（1.8m 大床 + 1.2–1.5m 单床），需加婴儿床 / 床围</td></tr>
+        <tr><td><b>房 B</b></td><td>爸爸 + 奶奶</td><td>双床房（两张 1.2m），电梯直达、离房 A 近</td></tr>
+      </table>
+      <div class="callout warn">不建议 5 人挤一间 66㎡ 家庭房——婴儿夜里醒两次，全家睡不好第二天全崩；也不建议开 3 间，沟通成本高反而不好照应。</div>
+
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>酒店</th><th>位置</th><th>价格/间</th><th>带娃优势</th><th>适合度</th></tr>
+          <tr><td><b>巢栖酒店</b> <span class="tag rec">首选</span></td><td>中华东路，核心街区</td><td>700–1200</td><td>亲子主题、室内戏水区、家庭房最大 66㎡</td><td>★★★★★</td></tr>
+          <tr><td><b>长盛旅店</b></td><td>北门，近岭南广场</td><td>500–1200</td><td>416 间好订、户外儿童乐园、性价比高</td><td>★★★★☆</td></tr>
+          <tr><td>巢趣亲子酒店</td><td>北门黄金位置</td><td>700–1200</td><td>加菲猫 IP、滑梯家庭房</td><td>★★★★☆</td></tr>
+          <tr><td>美堂酒店（5 星）</td><td>中华东路</td><td>900–1500</td><td><b>可提供婴儿床/床围</b>、儿童乐园、泳池、儿童餐</td><td>★★★★☆（预算宽裕）</td></tr>
+          <tr><td>荣安旅店</td><td>圩地街，安静区</td><td>500–800</td><td>静谧、电梯直达，几乎无亲子设施</td><td>★★★☆☆</td></tr>
+        </table>
+      </div>
+      <p><b>建议：</b>首选<b>巢栖酒店</b>（巢栖筑梦家庭房 + 双床房），7 岁女孩有室内戏水区、位置核心。订不到（仅 38 间）改<b>长盛旅店</b>；特别在意婴儿睡眠选<b>美堂酒店</b>。</p>
+      <h3>订房必问三句话</h3>
+      <ul class="ck" style="list-style:none">
+        <li style="padding-left:20px">① 两间房各送几张门票？7 岁、约 1.2 米的孩子要补差吗？</li>
+        <li style="padding-left:20px">② 能不能加婴儿床 / 床围？免费还是收费？</li>
+        <li style="padding-left:20px">③ 两间房能不能同楼层、相邻？</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ticket">
+    <div class="card">
+      <h2><span class="num">5</span>票务：住店免票</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>票种</th><th>价格</th><th>适用</th></tr>
+          <tr><td>成人票</td><td><b>150 元</b></td><td>—</td></tr>
+          <tr><td>儿童 / 老人票</td><td><b>75 元</b></td><td>身高 1.2–1.5 米儿童；60 岁（含）以上</td></tr>
+          <tr><td>免票</td><td>0 元</td><td>1.2 米以下儿童、残障/现役/退役军人、消防员</td></tr>
+        </table>
+      </div>
+      <h3>你家的账</h3>
+      <table>
+        <tr><th>人</th><th>票</th></tr>
+        <tr><td>爸爸 / 妈妈</td><td>150 ×2 = 300 元</td></tr>
+        <tr><td>奶奶（61 岁）</td><td>75 元</td></tr>
+        <tr><td>7 岁女孩（1.2–1.5 米估）</td><td>75 元</td></tr>
+        <tr><td>11 个月婴儿</td><td><b>免票</b></td></tr>
+        <tr><td><b>合计</b></td><td><b>450 元</b></td></tr>
+      </table>
+      <div class="callout">住景区酒店按标准入住人数赠送门票，两间房通常送 4 张，正好覆盖 4 个付费人——<b>理论上 450 元全免</b>。超出标准入住人数的儿童可能需补差（1.2–1.5 米补 75 元），所以门票支出在 <b>0–75 元</b>之间，无论如何都比单买划算，还送“入住期间无限次刷脸进出”。</div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="card">
+      <h2><span class="num">6</span>两天行程</h2>
+
+      <h3 style="color:var(--red)">Day 1 · 11/28（周六）慢进城，把夜场留给打铁花</h3>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-time">07:30</div><div class="tl-title">番禺出发</div><div class="tl-desc">出发前喂奶换尿布，车上备薄毯，婴儿在车上睡第一觉。</div></div>
+        <div class="tl-item"><div class="tl-time">09:20</div><div class="tl-title">抵达北门停车场</div><div class="tl-desc">停住宿客人区，打酒店电话叫接驳车。</div></div>
+        <div class="tl-item"><div class="tl-time">09:40</div><div class="tl-title">录人脸 · 寄存行李</div><div class="tl-desc">房间 15:00 才入住；给女孩发“任务卡”。</div></div>
+        <div class="tl-item"><div class="tl-time">10:00–11:20</div><div class="tl-title">骑楼老街漫步</div><div class="tl-desc">中华路 → 堤西路，600 余座骑楼连片 3 公里。⚠ <b>石板路 + 台阶，婴儿车难推，以背带为主</b>。</div></div>
+        <div class="tl-item rest"><div class="tl-time">11:20–11:50</div><div class="tl-title">关族 / 司徒氏图书馆</div><div class="tl-desc">室内有空调，婴儿小睡第一觉，老人歇脚看展。</div></div>
+        <div class="tl-item food"><div class="tl-time">12:00–13:00</div><div class="tl-title">午餐 · 南園餐厅</div><div class="tl-desc">荔枝木烤马岗鹅，开平名菜；11:50 到避开高峰。</div></div>
+        <div class="tl-item rest"><div class="tl-time">13:00–15:00</div><div class="tl-title">回酒店休息（不可省）</div><div class="tl-desc">婴儿睡午觉、奶奶也睡；爸爸带女孩去唐人街接 NPC 任务。<b>省了这两小时，下午必崩</b>。</div></div>
+        <div class="tl-item"><div class="tl-time">15:00</div><div class="tl-title">入住 · 全家补觉</div><div class="tl-desc">婴儿第二觉，老人泡脚贴膏药。</div></div>
+        <div class="tl-item"><div class="tl-time">16:00–16:40</div><div class="tl-title">复古铛铛车环游</div><div class="tl-desc">10 元/人无限次，30 分钟绕 3 公里，抢二楼前排，全程坐着。</div></div>
+        <div class="tl-item"><div class="tl-time">16:50–17:30</div><div class="tl-title">潭江摇橹船（日落档）</div><div class="tl-desc">拼船约 80 元/人；婴儿需儿童救生衣，哭闹就让奶奶带他在岸上等。</div></div>
+        <div class="tl-item food"><div class="tl-time">17:40–18:40</div><div class="tl-title">晚餐 · 圩地街小吃</div><div class="tl-desc">马仔豆腐角、煲仔饭、肠粉、糖水，出餐快。</div></div>
+        <div class="tl-item"><div class="tl-time">18:40–19:20</div><div class="tl-title">回房加衣 · 婴儿洗澡</div><div class="tl-desc">夜里 13–15℃，必须加薄外套。</div></div>
+        <div class="tl-item"><div class="tl-time">19:30–20:15</div><div class="tl-title">《火秀》打铁花（王牌）</div><div class="tl-desc">铁水化星雨 + 烟花 + 水幕。⚠ <b>巨响，婴儿必须戴降噪耳罩</b>；更稳做法：奶奶带婴儿先回房，爸妈带女孩看完再回。</div></div>
+        <div class="tl-item"><div class="tl-time">21:00</div><div class="tl-title">洗漱睡觉</div><div class="tl-desc">婴儿作息别打乱，第二天才好带。</div></div>
+      </div>
+
+      <h3 style="color:var(--red)">Day 2 · 11/29（周日）室内为主，午饭后返程</h3>
+      <div class="tl">
+        <div class="tl-item food"><div class="tl-time">07:30–08:30</div><div class="tl-title">酒店自助早餐</div><div class="tl-desc">1.2 米以下儿童早餐免费。</div></div>
+        <div class="tl-item"><div class="tl-time">09:00–10:20</div><div class="tl-title">唐人街 + 沉浸式小剧场</div><div class="tl-desc">优先<b>室内剧场</b>（《摩登时代》《红色婚礼》），有空调、可推车进。入园立刻约剧，每场限约 2 场。</div></div>
+        <div class="tl-item rest"><div class="tl-time">10:20–10:50</div><div class="tl-title">婴儿小睡 · 咖啡歇脚</div><div class="tl-desc">古镇里有星巴克、瑞幸、古茗、茶百道。</div></div>
+        <div class="tl-item"><div class="tl-time">10:50–11:40</div><div class="tl-title">醒狮广场 / 古戏台</div><div class="tl-desc">看当日粤剧、醒狮跳火圈，老人喜欢。</div></div>
+        <div class="tl-item"><div class="tl-time">11:40–12:00</div><div class="tl-title">买伴手礼</div><div class="tl-desc">侨批文创、灰塑小件、开平腐乳、马冈濑粉。</div></div>
+        <div class="tl-item food"><div class="tl-time">12:00–13:00</div><div class="tl-title">午餐（简餐）</div><div class="tl-desc">转角茶餐厅 / 荣华楼茶餐厅，出餐快。</div></div>
+        <div class="tl-item rest"><div class="tl-time">13:00–13:40</div><div class="tl-title">退房 · 寄存行李</div><div class="tl-desc">婴儿睡最后一觉；退房后人脸仍有效到 18:00。</div></div>
+        <div class="tl-item"><div class="tl-time">14:30</div><div class="tl-title">出发返程</div><div class="tl-desc">婴儿上车就睡，正好接下午觉。</div></div>
+        <div class="tl-item"><div class="tl-time">16:15</div><div class="tl-title">到家</div><div class="tl-desc">早到家 = 早洗澡 = 晚上不闹。</div></div>
+      </div>
+      <div class="callout">为什么第二天不去立园？田埂路推车进不去、碉楼要爬窄梯，61 岁老人 + 抱婴儿基本没法玩。真要去，建议下次单独一天或延长到三天两夜。</div>
+    </div>
+  </section>
+
+  <section id="show">
+    <div class="card">
+      <h2><span class="num">7</span>演艺预约（进园第一件事）</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>项目</th><th>类型</th><th>预约</th><th>备注</th></tr>
+          <tr><td><b>《火秀》打铁花</b></td><td>室外王牌</td><td>需预约</td><td>提前 15 分钟占位，江边视角最好</td></tr>
+          <tr><td>《摩登时代》</td><td>室内</td><td>需预约（限 2 场）</td><td>有空调，带婴儿首选</td></tr>
+          <tr><td>《红色婚礼》</td><td>室内</td><td>需预约（限 2 场）</td><td>同上</td></tr>
+          <tr><td>法国飞人巡游 / 醒狮跳火圈 / 婚典游行</td><td>街头</td><td>无需</td><td>火花四溅，婴儿要抱远</td></tr>
+          <tr><td>唐人街 NPC 任务</td><td>沉浸式</td><td>无需</td><td>7 岁女孩的重点项目，20+ 条故事线</td></tr>
+          <tr><td>铛铛车 / 摇橹船</td><td>交通观光</td><td>现场买票</td><td>铛铛车 10 元/人，摇橹船约 80 元/人</td></tr>
+        </table>
+      </div>
+      <p class="muted">预约：入园扫「约剧码」或微信小程序「赤坎华侨古镇」；住店客人前台领纸质码。场次以当日景区公告为准。</p>
+    </div>
+  </section>
+
+  <section id="food">
+    <div class="card">
+      <h2><span class="num">8</span>吃什么</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>类型</th><th>推荐</th><th>人均</th><th>说明</th></tr>
+          <tr><td>正餐（必吃）</td><td><b>南園餐厅</b> 荔枝木烤马岗鹅</td><td>60–80</td><td>鹅皮酥脆几乎无脂肪，老少皆宜</td></tr>
+          <tr><td>老字号</td><td>马仔豆腐角（30 年历史）</td><td>15–25</td><td>圩地街边走边吃</td></tr>
+          <tr><td>主食</td><td>圩地街煲仔饭、肠粉、云吞</td><td>20–35</td><td>小孩接受度高、上菜快</td></tr>
+          <tr><td>甜品</td><td>阿珍糖水、彩虹冰激凌</td><td>10–20</td><td>哄女孩利器</td></tr>
+          <tr><td>兜底</td><td>KFC、星巴克、瑞幸、古茗</td><td>—</td><td>孩子只想吃熟悉的就靠它</td></tr>
+          <tr><td>婴儿</td><td>自带米粉/果泥 + 保温壶</td><td>—</td><td>餐厅可要热水，但别指望有辅食</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="pack">
+    <div class="card">
+      <h2><span class="num">9</span>装备清单（分人打包）</h2>
+      <h3>婴儿（11 个月）· 最不能漏</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="b1"><label for="b1"><b>降噪耳罩</b>（看打铁花必备，普通耳塞不行）</label></li>
+        <li><input type="checkbox" id="b2"><label for="b2"><b>背带</b>（石板路 + 台阶，婴儿车会卡）</label></li>
+        <li><input type="checkbox" id="b3"><label for="b3">大轮可平躺婴儿车（室内 + 酒店用）</label></li>
+        <li><input type="checkbox" id="b4"><label for="b4">奶粉 + 奶瓶 ×3 + 保温壶（70℃ 水冲奶）</label></li>
+        <li><input type="checkbox" id="b5"><label for="b5">辅食 / 果泥 / 米饼 + 小勺围兜</label></li>
+        <li><input type="checkbox" id="b6"><label for="b6">尿不湿（6 片/天 ×2 + 备用 5 片）</label></li>
+        <li><input type="checkbox" id="b7"><label for="b7">湿巾 2 包、隔尿垫、垃圾袋</label></li>
+        <li><input type="checkbox" id="b8"><label for="b8">换洗衣 3 套 + 薄外套 / 小毯子</label></li>
+        <li><input type="checkbox" id="b9"><label for="b9">体温计、退烧药（美林/泰诺林）、益生菌</label></li>
+        <li><input type="checkbox" id="b10"><label for="b10">防晒帽、驱蚊液、安抚奶嘴 / 小玩具</label></li>
+      </ul>
+      <h3>7 岁女孩</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="g1"><label for="g1">舒适运动鞋 + 遮阳帽 + 防晒霜</label></li>
+        <li><input type="checkbox" id="g2"><label for="g2"><b>“古镇小任务”卡片</b>（比手机管用）</label></li>
+        <li><input type="checkbox" id="g3"><label for="g3">小背包（自己背水壶零食）+ 换洗衣 2 套</label></li>
+      </ul>
+      <h3>奶奶（61 岁）</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="n1"><label for="n1">防滑软底鞋（石板路很滑）</label></li>
+        <li><input type="checkbox" id="n2"><label for="n2"><b>折叠小板凳</b>（等演出排队能坐）</label></li>
+        <li><input type="checkbox" id="n3"><label for="n3">常用药 + 薄羽绒 + 保温杯 + 护膝</label></li>
+      </ul>
+      <h3>通用</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="c1"><label for="c1">身份证 ×4（录人脸、登记）</label></li>
+        <li><input type="checkbox" id="c2"><label for="c2">充电宝、雨伞 / 轻便雨衣 ×2、现金 200 元</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="budget">
+    <div class="card">
+      <h2><span class="num">10</span>费用预算（5 人）</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>项目</th><th>明细</th><th>金额</th></tr>
+          <tr><td>交通</td><td>油费约 160 + 过路费约 130 + 停车 0（住店免费）</td><td>约 290–320</td></tr>
+          <tr><td>住宿</td><td>家庭房约 900 + 双床房约 650（周末价）</td><td>约 1400–1800</td></tr>
+          <tr><td>门票</td><td>住店送 4 张（可能为女孩补差 75）</td><td>0–75</td></tr>
+          <tr><td>餐饮</td><td>D1 午 300 / 晚 200；D2 午 250</td><td>约 700–800</td></tr>
+          <tr><td>景区交通</td><td>铛铛车 10×4 + 摇橹船 80×4</td><td>约 360</td></tr>
+          <tr><td>杂项</td><td>伴手礼、咖啡、糖水、应急</td><td>约 200–300</td></tr>
+        </table>
+      </div>
+      <div class="totalfoot">合计 ≈ <b>2800 – 3300 元</b>　·　住宿换长盛旅店可压到 2200–2600 元</div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="card">
+      <h2><span class="num">11</span>三个应急预案</h2>
+      <table>
+        <tr><th style="width:26%">情况</th><th>应对</th></tr>
+        <tr><td><b>下雨</b></td><td>户外全砍，改走室内剧场 → 图书馆 → 华侨文化展馆 → 酒店室内戏水区。赤坎骑楼有连廊，其实不太淋得到</td></tr>
+        <tr><td><b>婴儿崩溃 / 发烧</b></td><td>立刻回酒店（住景区内的核心价值）。开平市中心医院车程约 15 分钟，带好退烧药别硬撑</td></tr>
+        <tr><td><b>奶奶走不动</b></td><td>就地找茶座坐下，其他人继续约好汇合；景区免费接驳车代步，折叠小板凳派上用场</td></tr>
+        <tr><td><b>女孩无聊</b></td><td>给她“任务卡”：① 找 3 种不同柱子 ② 数铛铛车铃响几次 ③ 找一个英文老招牌 ④ 向 NPC 要到一句侨批。完成 3 个换一支冰激凌</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="check">
+    <div class="card">
+      <h2><span class="num">12</span>出行前 Checklist</h2>
+      <ul class="ck">
+        <li><input type="checkbox" id="q1"><label for="q1"><b>T-7 天</b>：订房（巢栖仅 38 间易满），订完立刻电话确认“相邻房 + 婴儿床 + 送票张数”</label></li>
+        <li><input type="checkbox" id="q2"><label for="q2"><b>T-3 天</b>：查天气 + 查小程序「赤坎华侨古镇」当日节目表</label></li>
+        <li><input type="checkbox" id="q3"><label for="q3"><b>T-1 天</b>：加满油/充满电，婴儿装备单独一包，下载离线地图</label></li>
+        <li><input type="checkbox" id="q4"><label for="q4"><b>当天 07:00</b>：喂奶换尿布装车，导航设「北门停车场（住宿接待中心）」</label></li>
+        <li><input type="checkbox" id="q5"><label for="q5"><b>到场 09:40</b>：录人脸 → 存行李 → 立刻预约《火秀》和一场室内剧</label></li>
+        <li><input type="checkbox" id="q6"><label for="q6"><b>退房当天</b>：确认人脸有效期到 18:00，行李寄存后可继续玩</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    门票、房价、演艺场次均为 2026 年 11 月公开信息，实际以景区当日公告与酒店确认为准。<br>
+    这趟不是“看完赤坎”，是“全家都还想再来一次”。
+  </footer>
+
+</div>
+</body>
+</html>
