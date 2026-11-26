@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>肇庆七星岩 + 鼎湖山 · 两天一夜亲子游规划</title>
+<style>
+  :root{
+    --bg:#eef4f7;
+    --card:#fbfdfe;
+    --ink:#1d3038;
+    --sub:#5a6b73;
+    --red:#1a6b8f;
+    --red-deep:#0f4a64;
+    --gold:#3b9bbf;
+    --line:#d7e4ea;
+    --green:#2f8f5b;
+    --blue:#1f5e8f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--red);text-decoration:none}
+
+  .crosslink{display:block;max-width:860px;margin:16px auto 0;padding:0 18px}
+  .crosslink a{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink);transition:.15s;margin-bottom:8px}
+  .crosslink a:hover{border-color:var(--red);transform:translateY(-1px)}
+  .crosslink .arrow{color:var(--red);font-weight:800}
+
+  .hero{background:linear-gradient(150deg,#0f4a64 0%,#1a6b8f 55%,#3b9bbf 100%);color:#fff;padding:56px 20px 48px;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 40%),radial-gradient(circle at 80% 80%,rgba(255,255,255,.08),transparent 45%);pointer-events:none}
+  .hero .badge{display:inline-block;font-size:13px;letter-spacing:.2em;padding:6px 14px;border:1px solid rgba(255,255,255,.5);border-radius:999px;margin-bottom:20px;position:relative;z-index:1}
+  .hero h1{font-size:clamp(26px,5vw,42px);font-weight:800;letter-spacing:.02em;position:relative;z-index:1}
+  .hero .route{margin-top:14px;font-size:16px;opacity:.95;position:relative;z-index:1}
+  .hero .route b{font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px;position:relative;z-index:1}
+  .chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:8px 16px;border-radius:12px;font-size:14px;backdrop-filter:blur(4px)}
+  .chip b{font-weight:700}
+
+  .nav{position:sticky;top:0;z-index:20;background:rgba(238,244,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{flex:0 0 auto;font-size:13.5px;color:var(--sub);padding:6px 12px;border-radius:999px;white-space:nowrap;transition:.15s}
+  .nav a:hover{background:var(--red);color:#fff}
+
+  .wrap{max-width:860px;margin:0 auto;padding:26px 18px 60px}
+  section{margin-bottom:30px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 22px;box-shadow:0 2px 10px rgba(30,80,100,.05)}
+  h2{font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  h2 .num{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;background:var(--red);color:#fff;border-radius:9px;font-size:15px;font-weight:800;padding:0 7px}
+  h3{font-size:16px;font-weight:700;margin:18px 0 8px;color:var(--ink)}
+  p{margin:8px 0;color:var(--ink)}
+  .muted{color:var(--sub);font-size:14px}
+  .lead{font-size:15.5px}
+
+  .callout{border-left:4px solid var(--gold);background:#eaf3f6;border-radius:0 12px 12px 0;padding:14px 16px;margin:14px 0;font-size:14.5px}
+  .callout.warn{border-left-color:#c04a3a;background:#fbece9}
+  .callout.info{border-left-color:var(--blue);background:#e8f1f6}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;background:var(--card);border-radius:12px;overflow:hidden}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:12px 0}
+  .tbl-wrap table{margin:0;border:none}
+  th{background:#e3edf2;color:#33505e;text-align:left;font-weight:700;padding:10px 12px;white-space:nowrap;font-size:13.5px}
+  td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#f2f8fa}
+  td b,td strong{color:var(--ink)}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:700;white-space:nowrap}
+  .tag.rec{background:#dcebf1;color:var(--red-deep)}
+  .tag.no{background:#e6ecee;color:#6b7a80}
+  .tag.good{background:#e2f0e6;color:var(--green)}
+
+  .tl{position:relative;padding-left:26px;margin:8px 0 4px}
+  .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .tl-item{position:relative;padding:0 0 16px 12px}
+  .tl-item::before{content:"";position:absolute;left:-22px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--red)}
+  .tl-item.rest::before{border-color:var(--gold);background:var(--gold)}
+  .tl-item.food::before{border-color:var(--green)}
+  .tl-time{font-weight:800;color:var(--red);font-size:14px;letter-spacing:.02em}
+  .tl-item.rest .tl-time{color:#b8862e}
+  .tl-item.food .tl-time{color:var(--green)}
+  .tl-title{font-weight:700;margin:2px 0 2px}
+  .tl-desc{font-size:14px;color:var(--sub)}
+  .tl-desc b{color:var(--ink)}
+
+  .ck{list-style:none}
+  .ck li{position:relative;padding:7px 0 7px 34px;font-size:14.5px;border-bottom:1px dashed var(--line)}
+  .ck li:last-child{border-bottom:none}
+  .ck input{position:absolute;left:0;top:10px;width:20px;height:20px;accent-color:var(--red);cursor:pointer}
+  .ck label{cursor:pointer;display:block}
+  .ck input:checked + label{color:#9a9a9a;text-decoration:line-through}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .stat .v{font-size:24px;font-weight:800;color:var(--red)}
+  .stat .k{font-size:12.5px;color:var(--sub);margin-top:2px}
+
+  .totalfoot{background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;border-radius:14px;padding:20px 22px;margin-top:14px;font-size:15px}
+  .totalfoot b{font-size:22px}
+
+  footer{text-align:center;color:var(--sub);font-size:12.5px;padding:30px 18px 40px;border-top:1px solid var(--line);margin-top:10px}
+  @media print{.nav,.hero,.crosslink{display:none}body{background:#fff}.card,.tbl-wrap,.stat{box-shadow:none;border-color:#ddd}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="badge">家庭出行 · 两天一夜</span>
+  <h1>肇庆七星岩 + 鼎湖山亲子游规划</h1>
+  <div class="route">广州 <b>番禺</b> → 肇庆 <b>七星岩 + 鼎湖山</b>（5A 山水慢游）</div>
+  <div class="chips">
+    <span class="chip">成员 <b>5 人</b>（2 大 · 1 老 · 2 小）</span>
+    <span class="chip">日期 <b>11/28 – 11/29</b></span>
+    <span class="chip">自驾 <b>115–130 km</b> · 约 1h50m</span>
+    <span class="chip">预算 <b>≈ 2000–2600 元</b></span>
+  </div>
+</div>
+
+<div class="crosslink">
+  <a href="https://kaishui.github.io/chikan-trip/"><span class="arrow">←</span> 赤坎古镇攻略（车程 1.75 小时，古镇慢游）</a>
+  <a href="https://kaishui.github.io/chikan-trip/lianzhou.html"><span class="arrow">←</span> 连州地下河攻略（溶洞 + 江景，车程 3.5 小时）</a>
+  <a href="https://kaishui.github.io/chikan-trip/heyuan.html"><span class="arrow">←</span> 河源客天下温泉攻略（温泉 + 欧式庄园）</a>
+  <a href="https://kaishui.github.io/chikan-trip/qingyuan.html"><span class="arrow">←</span> 清远佛冈熹乐谷温泉攻略（温泉 + 无动力乐园，车程约 1.5 小时）</a>
+</div>
+
+<nav class="nav">
+  <a href="#judge">核心判断</a>
+  <a href="#date">日期</a>
+  <a href="#traffic">交通</a>
+  <a href="#hotel">住宿</a>
+  <a href="#ticket">票务</a>
+  <a href="#plan">行程</a>
+  <a href="#food">美食</a>
+  <a href="#pack">装备</a>
+  <a href="#budget">预算</a>
+  <a href="#risk">预案</a>
+  <a href="#check">清单</a>
+</nav>
+
+<div class="wrap">
+
+  <section id="judge">
+    <div class="card">
+      <h2><span class="num">0</span>先说一句：四个选择里最"山水慢游"的一个</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>对比</th><th>赤坎</th><th>连州</th><th>河源</th><th><b>肇庆</b></th></tr>
+          <tr><td>单程车程</td><td>1h45m</td><td>3.5h</td><td>约 2h10m</td><td><b>约 1h50m</b></td></tr>
+          <tr><td>玩法</td><td>古镇+演艺</td><td>溶洞+游船</td><td>温泉+庄园</td><td><b>5A 山水+森林氧吧</b></td></tr>
+          <tr><td>节奏</td><td>慢游</td><td>偏紧凑</td><td>最松弛</td><td><b>平缓慢游</b></td></tr>
+        </table>
+      </div>
+      <div class="callout">肇庆是「七星岩（湖景喀斯特）+ 鼎湖山（森林氧吧）」两个 5A，步道平缓、电瓶车 + 游船代步，是四个选择里最接近"带老人看山水、带婴儿推车逛"的节奏。唯一要认真对待的是<b>鼎湖山要买观光车</b>省体力。</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2><span class="num">1</span>三个关键判断</h2>
+      <table>
+        <tr><th style="width:24%">判断</th><th>做法</th><th>为什么</th></tr>
+        <tr><td><b>① 买 140 元联票</b></td><td>联票 2 天有效，两天各玩一个景区</td><td>单票各 70，联票最划算；优待票（老人/学生）各 35 分开买</td></tr>
+        <tr><td><b>② 鼎湖山必买观光车</b></td><td>20 元往返（老人儿童 10 元）</td><td>山门到庆云寺/飞水潭很远，不坐车奶奶抱娃走不动</td></tr>
+        <tr><td><b>③ 七星岩推车友好</b></td><td>环湖步道推婴儿车，电瓶车 + 游船代步</td><td>晚上 19:00 后七星岩免门票可夜游（以公示为准）</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="date">
+    <div class="card">
+      <h2><span class="num">2</span>日期与天气</h2>
+      <p class="muted">肇庆这周末晴到多云、无雨，白天舒服、早晚凉（夜里最低 12–16℃）。</p>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>日期</th><th>天气</th><th>气温</th><th>提醒</th></tr>
+          <tr><td><b>11/28（六）</b></td><td>晴转多云</td><td>13–25℃</td><td><span class="tag rec">出发日</span> 白天舒服，早晚加衣</td></tr>
+          <tr><td><b>11/29（日）</b></td><td>多云</td><td>16–24℃</td><td><span class="tag good">返程日</span></td></tr>
+          <tr><td>12/1 起</td><td>多云转小雨</td><td>—</td><td><span class="tag no">之后转雨</span> 本周末是近期好窗口</td></tr>
+        </table>
+      </div>
+      <div class="callout">鼎湖山树多、飞水潭一带体感偏凉，老人和婴儿<b>带件薄外套/夹棉衣</b>。</div>
+    </div>
+  </section>
+
+  <section id="traffic">
+    <div class="card">
+      <h2><span class="num">3</span>怎么去：自驾</h2>
+      <div class="grid2" style="margin-bottom:14px">
+        <div class="stat"><div class="v">115–130 km</div><div class="k">单程距离</div></div>
+        <div class="stat"><div class="v">约 1h50m</div><div class="k">单程车程</div></div>
+      </div>
+      <table>
+        <tr><th>方式</th><th>时长</th><th>成本（往返）</th><th>评价</th></tr>
+        <tr><td><b>自驾</b> <span class="tag rec">推荐</span></td><td>约 1 小时 40–50 分</td><td>油费 + 过路费约 <b>200–250 元</b></td><td>门到门，行李多也方便</td></tr>
+        <tr><td>高铁</td><td>广州南→肇庆东约 40 分 + 打车进市区约 30 分</td><td>转乘折腾</td><td>不如自驾省心</td></tr>
+      </table>
+      <ul class="ck" style="list-style:none">
+        <li style="padding-left:20px">路线：番禺 → 广台/广三高速 → <b>广肇高速（G80）</b> → 肇庆出口 → 星湖大道。</li>
+        <li style="padding-left:20px">七星岩与鼎湖山相距约 20 公里（40 分钟），两天各去一个，不必当天往返。</li>
+        <li style="padding-left:20px">8:00 出发即可，婴儿车上睡一觉。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="hotel">
+    <div class="card">
+      <h2><span class="num">4</span>住宿：住岩前村湖畔，步行到七星岩</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>方案</th><th>说明</th><th>参考价</th><th>适合度</th></tr>
+          <tr><td><b>岩前村湖畔民宿</b> <span class="tag rec">首选</span></td><td>临星湖，270° 看山水，步行即到七星岩</td><td>约 300–500/间</td><td>★★★★★ 省去二次折腾</td></tr>
+          <tr><td>肇庆市区酒店</td><td>选择多、性价比高</td><td>约 250–450/间</td><td>★★★★☆ 离景区稍远需开车</td></tr>
+        </table>
+      </div>
+      <p><b>5 人怎么住：</b>订「双床房 ×2」相邻（爸爸 + 奶奶一间，妈妈 + 女孩 + 婴儿一间），带电梯、可加婴儿床。</p>
+      <h3>订房必问</h3>
+      <ul class="ck" style="list-style:none">
+        <li style="padding-left:20px">① 有无电梯（抱婴儿 + 推车）？</li>
+        <li style="padding-left:20px">② 能否加婴儿床？</li>
+        <li style="padding-left:20px">③ 两间能否相邻？</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ticket">
+    <div class="card">
+      <h2><span class="num">5</span>票务</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>项目</th><th>成人</th><th>老人 60–69 / 学生</th><th>婴儿（1.2m 以下）</th></tr>
+          <tr><td>七星岩</td><td>70 元</td><td>35 元</td><td>免票</td></tr>
+          <tr><td>鼎湖山</td><td>70 元</td><td>35 元</td><td>免票</td></tr>
+          <tr><td><b>联票（2 天有效）</b></td><td><b>140 元</b></td><td>建议分开买优待票</td><td>—</td></tr>
+        </table>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>自费项目（自愿）</th><th>价格</th><th>说明</th></tr>
+          <tr><td>鼎湖山观光车</td><td>20 元（老人儿童 10 元）</td><td><b>必买</b>，省体力</td></tr>
+          <tr><td>七星岩电瓶车</td><td>20 元</td><td>环湖代步</td></tr>
+          <tr><td>双源洞游船</td><td>20 元</td><td>地下溶洞</td></tr>
+          <tr><td>仙女湖游船</td><td>35 元</td><td>看丹顶鹤（女孩喜欢）</td></tr>
+          <tr><td>蝴蝶谷游船</td><td>35 元</td><td>鼎湖山内</td></tr>
+        </table>
+      </div>
+      <div class="callout">开放时间 08:00–18:00（七星岩 17:30 停止入园）。<b>七星岩每晚 19:00–22:00 免门票（夜游灯光）</b>，白天看完晚上还能免费再进看夜景，以景区当日公示为准。</div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="card">
+      <h2><span class="num">6</span>两天行程</h2>
+      <h3 style="color:var(--red)">Day 1 · 11/28（周六）七星岩湖景慢游</h3>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-time">08:00</div><div class="tl-title">番禺出发</div><div class="tl-desc">婴儿车上睡一觉，车程短。</div></div>
+        <div class="tl-item"><div class="tl-time">09:40</div><div class="tl-title">到肇庆 · 办入住</div><div class="tl-desc">岩前村放行李，湖边散步。</div></div>
+        <div class="tl-item food"><div class="tl-time">11:00–12:00</div><div class="tl-title">午餐 · 裹蒸粽 / 竹篙粉</div><div class="tl-desc">文㞧鲤、山坑螺值得点。</div></div>
+        <div class="tl-item rest"><div class="tl-time">12:30–14:30</div><div class="tl-title">午睡（不可省）</div><div class="tl-desc">婴儿睡午觉、老人也歇。</div></div>
+        <div class="tl-item"><div class="tl-time">15:00–18:00</div><div class="tl-title">七星岩（北门进，东门出）</div><div class="tl-desc">电瓶车环湖 → 仙女湖游船看丹顶鹤 → 摩崖石刻 → 五龙亭 → 东门出。步道平缓可推婴儿车。</div></div>
+        <div class="tl-item food"><div class="tl-time">18:30</div><div class="tl-title">晚餐</div><div class="tl-desc">本地菜。</div></div>
+        <div class="tl-item"><div class="tl-time">19:30（可选）</div><div class="tl-title">夜游七星岩 · 灯光夜景</div><div class="tl-desc">19:00 后免门票，看灯光/音乐喷泉，视体力。</div></div>
+      </div>
+      <h3 style="color:var(--red)">Day 2 · 11/29（周日）鼎湖山森林氧吧</h3>
+      <div class="tl">
+        <div class="tl-item food"><div class="tl-time">08:00–09:00</div><div class="tl-title">早餐</div><div class="tl-desc">吃饱点。</div></div>
+        <div class="tl-item"><div class="tl-time">09:00–12:00</div><div class="tl-title">鼎湖山（观光车上山）</div><div class="tl-desc">飞水潭瀑布 → 蝴蝶谷 → 庆云寺（素斋可尝）。观光车往返 20 元，老人儿童 10 元。</div></div>
+        <div class="tl-item food"><div class="tl-time">12:30</div><div class="tl-title">午餐</div><div class="tl-desc">本地菜。</div></div>
+        <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-title">出发返程</div><div class="tl-desc">婴儿上车就睡，接午觉。</div></div>
+        <div class="tl-item"><div class="tl-time">15:30</div><div class="tl-title">到家</div><div class="tl-desc">早到家，晚上不闹。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="food">
+    <div class="card">
+      <h2><span class="num">7</span>吃什么（肇庆特色）</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>类型</th><th>推荐</th><th>说明</th></tr>
+          <tr><td>主食</td><td><b>裹蒸粽</b>、竹篙粉、鸡蛋烧卖、云吞</td><td>肇庆名片</td></tr>
+          <tr><td>菜品</td><td>文㞧鲤、山坑螺、生炒鱼片</td><td>湖鲜/山珍</td></tr>
+          <tr><td>寺庙</td><td>庆云寺「鼎湖上素」</td><td>素斋，可尝</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="pack">
+    <div class="card">
+      <h2><span class="num">8</span>装备清单</h2>
+      <h3>婴儿（11 个月）</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="b1"><label for="b1"><b>婴儿车</b>（七星岩环湖可用）+ 背带（鼎湖山部分路段）</label></li>
+        <li><input type="checkbox" id="b2"><label for="b2">夹棉连体衣 + 帽子 + 换洗衣 3 套</label></li>
+        <li><input type="checkbox" id="b3"><label for="b3">奶瓶 ×3 + 奶粉 + 保温壶 + 辅食/果泥</label></li>
+        <li><input type="checkbox" id="b4"><label for="b4">尿不湿（6 片/天 ×2 + 备用）、湿巾、隔尿垫</label></li>
+        <li><input type="checkbox" id="b5"><label for="b5">体温计、退烧药、益生菌</label></li>
+      </ul>
+      <h3>女孩 / 奶奶 / 通用</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="g1"><label for="g1">女孩：小背包、换洗衣 2 套、水壶</label></li>
+        <li><input type="checkbox" id="n1"><label for="n1">奶奶：防滑鞋（鼎湖山有石阶）、常用药、保温杯</label></li>
+        <li><input type="checkbox" id="c1"><label for="c1">防晒霜、薄外套、身份证 ×4、充电宝、现金 200、车满油</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="budget">
+    <div class="card">
+      <h2><span class="num">9</span>费用预算（5 人）</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>项目</th><th>明细</th><th>金额</th></tr>
+          <tr><td>交通</td><td>油费 + 高速约 200–250</td><td>约 200–250</td></tr>
+          <tr><td>门票</td><td>成人联票 140×2 + 奶奶 70 + 女孩 70</td><td>约 420</td></tr>
+          <tr><td>景区交通</td><td>观光车/游船/电瓶车</td><td>约 120–170</td></tr>
+          <tr><td>住宿</td><td>2 间 × 300–500</td><td>约 600–1000</td></tr>
+          <tr><td>餐饮</td><td>D1 午 250 / 晚 250；D2 午 250</td><td>约 600–800</td></tr>
+        </table>
+      </div>
+      <div class="totalfoot">合计 ≈ <b>2000 – 2600 元</b>　·　门票是固定大头，住宿丰俭由人</div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="card">
+      <h2><span class="num">10</span>三个应急预案</h2>
+      <table>
+        <tr><th style="width:30%">情况</th><th>应对</th></tr>
+        <tr><td><b>下雨</b></td><td>七星岩游船/双源洞可避雨；鼎湖山改次日或取消，改逛市区骑楼街</td></tr>
+        <tr><td><b>婴儿状态不好</b></td><td>七星岩步道可推车慢走随时折返；爸爸带娃在酒店休息</td></tr>
+        <tr><td><b>奶奶走不动</b></td><td>鼎湖山靠观光车；七星岩靠电瓶车 + 游船，全程少走</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="check">
+    <div class="card">
+      <h2><span class="num">11</span>出行前 Checklist</h2>
+      <ul class="ck">
+        <li><input type="checkbox" id="q1"><label for="q1"><b>T-5 天</b>：订房（岩前村带电梯民宿），确认婴儿床 + 相邻房</label></li>
+        <li><input type="checkbox" id="q2"><label for="q2"><b>T-3 天</b>：查天气；线上买 140 联票（或到景区窗口买优待票）</label></li>
+        <li><input type="checkbox" id="q3"><label for="q3"><b>T-1 天</b>：加满油；备齐婴儿车、背带、薄外套</label></li>
+        <li><input type="checkbox" id="q4"><label for="q4"><b>当天 08:00</b>：喂奶换尿布装车，导航设「七星岩北门 / 岩前村」</label></li>
+        <li><input type="checkbox" id="q5"><label for="q5"><b>12:30–14:30</b>：午睡，别省</label></li>
+        <li><input type="checkbox" id="q6"><label for="q6"><b>鼎湖山</b>：必买观光车（20 元往返）</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    门票、房价、开放时间均为 2026 年 11 月公开信息，实际以景区当日公示与酒店确认为准。<br>
+    七星岩夜游免票政策以景区当日公示为准。
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>清远佛冈熹乐谷温泉 · 两天一夜亲子游规划</title>
+<style>
+  :root{
+    --bg:#faf5ea;
+    --card:#fffcf5;
+    --ink:#3a2e1c;
+    --sub:#7a6a4f;
+    --red:#a06a1e;
+    --red-deep:#7c4f14;
+    --gold:#d9a441;
+    --line:#eadfbf;
+    --green:#6b8f3a;
+    --blue:#4a6b8f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--red);text-decoration:none}
+
+  .crosslink{display:block;max-width:860px;margin:16px auto 0;padding:0 18px}
+  .crosslink a{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink);transition:.15s;margin-bottom:8px}
+  .crosslink a:hover{border-color:var(--red);transform:translateY(-1px)}
+  .crosslink .arrow{color:var(--red);font-weight:800}
+
+  .hero{background:linear-gradient(150deg,#5c3a12 0%,#a06a1e 55%,#d9a441 100%);color:#fff;padding:56px 20px 48px;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 40%),radial-gradient(circle at 80% 80%,rgba(255,255,255,.08),transparent 45%);pointer-events:none}
+  .hero .badge{display:inline-block;font-size:13px;letter-spacing:.2em;padding:6px 14px;border:1px solid rgba(255,255,255,.5);border-radius:999px;margin-bottom:20px;position:relative;z-index:1}
+  .hero h1{font-size:clamp(26px,5vw,42px);font-weight:800;letter-spacing:.02em;position:relative;z-index:1}
+  .hero .route{margin-top:14px;font-size:16px;opacity:.95;position:relative;z-index:1}
+  .hero .route b{font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px;position:relative;z-index:1}
+  .chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:8px 16px;border-radius:12px;font-size:14px;backdrop-filter:blur(4px)}
+  .chip b{font-weight:700}
+
+  .nav{position:sticky;top:0;z-index:20;background:rgba(250,245,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{flex:0 0 auto;font-size:13.5px;color:var(--sub);padding:6px 12px;border-radius:999px;white-space:nowrap;transition:.15s}
+  .nav a:hover{background:var(--red);color:#fff}
+
+  .wrap{max-width:860px;margin:0 auto;padding:26px 18px 60px}
+  section{margin-bottom:30px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 22px;box-shadow:0 2px 10px rgba(150,100,30,.05)}
+  h2{font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  h2 .num{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;background:var(--red);color:#fff;border-radius:9px;font-size:15px;font-weight:800;padding:0 7px}
+  h3{font-size:16px;font-weight:700;margin:18px 0 8px;color:var(--ink)}
+  p{margin:8px 0;color:var(--ink)}
+  .muted{color:var(--sub);font-size:14px}
+  .lead{font-size:15.5px}
+
+  .callout{border-left:4px solid var(--gold);background:#fdf6e6;border-radius:0 12px 12px 0;padding:14px 16px;margin:14px 0;font-size:14.5px}
+  .callout.warn{border-left-color:#b04a2a;background:#fbe9dc}
+  .callout.info{border-left-color:var(--green);background:#eaf1e8}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;background:var(--card);border-radius:12px;overflow:hidden}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:12px 0}
+  .tbl-wrap table{margin:0;border:none}
+  th{background:#f0e5c8;color:#5b4a26;text-align:left;font-weight:700;padding:10px 12px;white-space:nowrap;font-size:13.5px}
+  td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#faf3e0}
+  td b,td strong{color:var(--ink)}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:700;white-space:nowrap}
+  .tag.rec{background:#f3e3c2;color:var(--red-deep)}
+  .tag.no{background:#ece4d0;color:#7a6f55}
+  .tag.good{background:#e6efe0;color:var(--green)}
+
+  .tl{position:relative;padding-left:26px;margin:8px 0 4px}
+  .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .tl-item{position:relative;padding:0 0 16px 12px}
+  .tl-item::before{content:"";position:absolute;left:-22px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--red)}
+  .tl-item.rest::before{border-color:var(--gold);background:var(--gold)}
+  .tl-item.food::before{border-color:var(--green)}
+  .tl-time{font-weight:800;color:var(--red);font-size:14px;letter-spacing:.02em}
+  .tl-item.rest .tl-time{color:#b8862e}
+  .tl-item.food .tl-time{color:var(--green)}
+  .tl-title{font-weight:700;margin:2px 0 2px}
+  .tl-desc{font-size:14px;color:var(--sub)}
+  .tl-desc b{color:var(--ink)}
+
+  .ck{list-style:none}
+  .ck li{position:relative;padding:7px 0 7px 34px;font-size:14.5px;border-bottom:1px dashed var(--line)}
+  .ck li:last-child{border-bottom:none}
+  .ck input{position:absolute;left:0;top:10px;width:20px;height:20px;accent-color:var(--red);cursor:pointer}
+  .ck label{cursor:pointer;display:block}
+  .ck input:checked + label{color:#a8987a;text-decoration:line-through}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .stat .v{font-size:24px;font-weight:800;color:var(--red)}
+  .stat .k{font-size:12.5px;color:var(--sub);margin-top:2px}
+
+  .totalfoot{background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;border-radius:14px;padding:20px 22px;margin-top:14px;font-size:15px}
+  .totalfoot b{font-size:22px}
+
+  footer{text-align:center;color:var(--sub);font-size:12.5px;padding:30px 18px 40px;border-top:1px solid var(--line);margin-top:10px}
+  @media print{.nav,.hero,.crosslink{display:none}body{background:#fff}.card,.tbl-wrap,.stat{box-shadow:none;border-color:#ddd}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="badge">家庭出行 · 两天一夜</span>
+  <h1>清远佛冈熹乐谷温泉亲子游规划</h1>
+  <div class="route">广州 <b>番禺</b> → 清远佛冈 <b>熹乐谷</b>（温泉 + 无动力乐园）</div>
+  <div class="chips">
+    <span class="chip">成员 <b>5 人</b>（2 大 · 1 老 · 2 小）</span>
+    <span class="chip">日期 <b>11/28 – 11/29</b></span>
+    <span class="chip">自驾 <b>106–120 km</b> · 约 1.5h</span>
+    <span class="chip">预算 <b>≈ 2200–3200 元</b></span>
+  </div>
+</div>
+
+<div class="crosslink">
+  <a href="https://kaishui.github.io/chikan-trip/"><span class="arrow">←</span> 赤坎古镇攻略（车程 1.75 小时，古镇慢游）</a>
+  <a href="https://kaishui.github.io/chikan-trip/lianzhou.html"><span class="arrow">←</span> 连州地下河攻略（溶洞 + 江景，车程 3.5 小时）</a>
+  <a href="https://kaishui.github.io/chikan-trip/heyuan.html"><span class="arrow">←</span> 河源客天下温泉攻略（温泉 + 欧式庄园）</a>
+  <a href="https://kaishui.github.io/chikan-trip/zhaoqing.html"><span class="arrow">←</span> 肇庆七星岩 + 鼎湖山攻略（5A 山水慢游）</a>
+</div>
+
+<nav class="nav">
+  <a href="#judge">核心判断</a>
+  <a href="#date">日期</a>
+  <a href="#traffic">交通</a>
+  <a href="#hotel">住宿</a>
+  <a href="#ticket">票务</a>
+  <a href="#plan">行程</a>
+  <a href="#hotspring">泡汤提醒</a>
+  <a href="#food">美食</a>
+  <a href="#pack">装备</a>
+  <a href="#budget">预算</a>
+  <a href="#risk">预案</a>
+  <a href="#check">清单</a>
+</nav>
+
+<div class="wrap">
+
+  <section id="judge">
+    <div class="card">
+      <h2><span class="num">0</span>先说一句：四个选择里最"省心"的一个</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>对比</th><th>赤坎</th><th>连州</th><th>肇庆</th><th><b>清远熹乐谷</b></th></tr>
+          <tr><td>单程车程</td><td>1h45m</td><td>3.5h</td><td>约 1h50m</td><td><b>约 1.5h</b></td></tr>
+          <tr><td>玩法</td><td>古镇+演艺</td><td>溶洞+游船</td><td>5A 山水</td><td><b>温泉+无动力乐园</b></td></tr>
+          <tr><td>节奏</td><td>慢游</td><td>偏紧凑</td><td>平缓慢游</td><td><b>一站式最省心</b></td></tr>
+        </table>
+      </div>
+      <div class="callout">熹乐谷是「住下、泡汤、遛娃」一站式，65 个汤池 + 87℃ 珍稀氡泉 + 3 万㎡ 水世界 + 无动力乐园，不用赶场。唯一要认真对待的是<b>泡温泉对婴儿和 61 岁老人的讲究</b>（见泡汤提醒）。</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2><span class="num">1</span>三个关键判断</h2>
+      <table>
+        <tr><th style="width:24%">判断</th><th>做法</th><th>为什么</th></tr>
+        <tr><td><b>① 订含温泉的住宿</b></td><td>订酒店/公寓含温泉套餐</td><td>凤凰温泉单买 137 元/人，5 人近 700；含套餐房费直接吃掉门票</td></tr>
+        <tr><td><b>② 婴儿优先私汤房型</b></td><td>阳台/房间独立泡池，水温可调</td><td>人少卫生、水温可控，婴儿在房间泡最安全</td></tr>
+        <tr><td><b>③ 下午错峰泡汤</b></td><td>15:00–17:30，避开晚间人流</td><td>人少、水温体感好；泡完擦干加衣防冷风</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="date">
+    <div class="card">
+      <h2><span class="num">2</span>日期与天气</h2>
+      <p class="muted">佛冈在山里，这周末晴到多云、无雨，昼夜温差大（夜里最低 10–13℃）。</p>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>日期</th><th>天气</th><th>气温</th><th>提醒</th></tr>
+          <tr><td><b>11/28（六）</b></td><td>晴转多云</td><td>10–23℃</td><td><span class="tag rec">出发日</span> 夜里偏凉</td></tr>
+          <tr><td><b>11/29（日）</b></td><td>多云</td><td>13–24℃</td><td><span class="tag good">返程日</span></td></tr>
+          <tr><td>12/1 起</td><td>多云转小雨</td><td>—</td><td><span class="tag no">之后转雨</span> 本周末是近期好窗口</td></tr>
+        </table>
+      </div>
+      <div class="callout">泡完汤上岸务必<b>立刻擦干、裹浴袍</b>，夜里最低 10℃，冷风一吹易感冒。</div>
+    </div>
+  </section>
+
+  <section id="traffic">
+    <div class="card">
+      <h2><span class="num">3</span>怎么去：自驾</h2>
+      <div class="grid2" style="margin-bottom:14px">
+        <div class="stat"><div class="v">106–120 km</div><div class="k">单程距离</div></div>
+        <div class="stat"><div class="v">约 1.5h</div><div class="k">单程车程</div></div>
+      </div>
+      <table>
+        <tr><th>方式</th><th>时长</th><th>成本（往返）</th><th>评价</th></tr>
+        <tr><td><b>自驾</b> <span class="tag rec">推荐</span></td><td>约 1.5 小时</td><td>油费 + 过路费约 <b>200 元</b></td><td>门到门，行李多也方便</td></tr>
+        <tr><td>公共交通</td><td>转乘折腾</td><td>—</td><td>不如自驾省心</td></tr>
+      </table>
+      <ul class="ck" style="list-style:none">
+        <li style="padding-left:20px">路线：番禺 → <b>京港澳高速（G4）</b> → 汤塘出口 → 右转约 800 米 → 熹乐谷温泉度假区。</li>
+        <li style="padding-left:20px">导航设「清远佛冈熹乐谷温泉度假区」，<b>停车免费</b>，园区有免费接驳车。</li>
+        <li style="padding-left:20px">8:00 出发即可，婴儿车上睡一觉。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="hotel">
+    <div class="card">
+      <h2><span class="num">4</span>住宿：订含温泉的房型</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>方案</th><th>说明</th><th>参考价</th><th>适合度</th></tr>
+          <tr><td><b>熹乐谷温泉度假酒店</b> <span class="tag rec">首选</span></td><td>5 星、清远温泉榜 No.1，含温泉；亲子主题房带滑梯 + 阳台私汤</td><td>约 1199 起/间</td><td>★★★★★ 婴儿私汤最安全</td></tr>
+          <tr><td>九熹山公寓/民宿</td><td>355 起含「2 大 1 小温泉 + 无动力乐园」单次票</td><td>约 355–555/套</td><td>★★★★☆ 性价比高</td></tr>
+        </table>
+      </div>
+      <p><b>5 人怎么住：</b>订「亲子房（妈妈 + 女孩 + 婴儿）+ 双床房（爸爸 + 奶奶）」相邻；亲子房有滑梯、儿童牙刷、婴儿护栏、阳台私汤。</p>
+      <h3>订房必问</h3>
+      <ul class="ck" style="list-style:none">
+        <li style="padding-left:20px">① 房价含温泉票吗？含几人？婴儿进温泉区收费吗？</li>
+        <li style="padding-left:20px">② 有没有带独立泡池的房型？水温能调吗？</li>
+        <li style="padding-left:20px">③ 两间能否相邻？停车免费吗？</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ticket">
+    <div class="card">
+      <h2><span class="num">5</span>票务（住宿含温泉最划算）</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>项目</th><th>参考价</th><th>说明</th></tr>
+          <tr><td><b>凤凰温泉</b></td><td>成人 137 / 儿童 77</td><td>65 个汤池，87℃ 珍稀氡泉，含儿童低温池（带卡通滑梯）</td></tr>
+          <tr><td>温泉 + 不夜山谷 + 庙会自助晚餐</td><td>265 元</td><td>一票通吃通玩</td></tr>
+          <tr><td>星球无动力乐园</td><td>儿童 38 元</td><td>彩虹滑道、攀爬网、沙池</td></tr>
+          <tr><td>不夜山谷自助晚餐</td><td>166 元</td><td>唐风夜市 + 表演</td></tr>
+        </table>
+      </div>
+      <div class="callout"><b>住宿含温泉票最划算。</b>温泉开放 09:00–23:59（23:00 停止入园）。一般 1.2 米以下婴儿免票、老人持身份证有优惠，以现场公示为准。</div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="card">
+      <h2><span class="num">6</span>两天行程</h2>
+      <h3 style="color:var(--red)">Day 1 · 11/28（周六）下午泡汤，晚上逛不夜山谷</h3>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-time">08:00</div><div class="tl-title">番禺出发</div><div class="tl-desc">婴儿车上睡一觉，车程短中途不用停。</div></div>
+        <div class="tl-item"><div class="tl-time">09:45</div><div class="tl-title">到熹乐谷 · 办入住</div><div class="tl-desc">先寄存行李，园区散步。</div></div>
+        <div class="tl-item food"><div class="tl-time">11:00–12:00</div><div class="tl-title">午餐 · 八刀汤 / 客家菜</div><div class="tl-desc">佛冈当地味。</div></div>
+        <div class="tl-item rest"><div class="tl-time">12:30–14:30</div><div class="tl-title">午睡（不可省）</div><div class="tl-desc">婴儿睡午觉、老人也歇。</div></div>
+        <div class="tl-item"><div class="tl-time">15:00–17:30</div><div class="tl-title">泡温泉（错峰）</div><div class="tl-desc">婴儿私汤/儿童低温池；女孩玩童趣区；老人泡养生池；爸妈轮流照看。</div></div>
+        <div class="tl-item food"><div class="tl-time">18:00</div><div class="tl-title">晚餐</div><div class="tl-desc">泡汤后先擦干、加衣再吃饭。</div></div>
+        <div class="tl-item"><div class="tl-time">19:30–21:00</div><div class="tl-title">不夜山谷</div><div class="tl-desc">唐风灯笼、不倒翁表演、庙会小吃；婴儿累了就回房。</div></div>
+      </div>
+      <h3 style="color:var(--red)">Day 2 · 11/29（周日）无动力乐园放电，午饭后返程</h3>
+      <div class="tl">
+        <div class="tl-item food"><div class="tl-time">08:30–09:30</div><div class="tl-title">早餐（戈佐西餐厅自助）</div><div class="tl-desc">1.2 米以下儿童免费。</div></div>
+        <div class="tl-item"><div class="tl-time">09:30–11:30</div><div class="tl-title">星球无动力乐园 + 萌宠乐园</div><div class="tl-desc">彩虹滑道、攀爬网、沙池放电；谷鹿萌宠乐园喂小浣熊、梅花鹿（女孩喜欢）。</div></div>
+        <div class="tl-item food"><div class="tl-time">11:30–12:30</div><div class="tl-title">午餐</div><div class="tl-desc">客家菜。</div></div>
+        <div class="tl-item"><div class="tl-time">13:00</div><div class="tl-title">出发返程</div><div class="tl-desc">婴儿上车就睡，接午觉。</div></div>
+        <div class="tl-item"><div class="tl-time">14:45</div><div class="tl-title">到家</div><div class="tl-desc">早到家，晚上不闹。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hotspring">
+    <div class="card">
+      <h2><span class="num">7</span>泡温泉：带婴儿 + 老人的注意事项</h2>
+      <table>
+        <tr><th style="width:36%">风险点</th><th>具体做法</th></tr>
+        <tr><td><b>婴儿不能久泡高温池</b></td><td>只泡 38℃ 儿童浅池，每次 10–15 分钟；泡完立刻擦干、裹浴袍、补水</td></tr>
+        <tr><td><b>别空腹/刚吃饱就泡</b></td><td>饭后 30–60 分钟再泡，泡前别喂太饱</td></tr>
+        <tr><td><b>老人控制时长</b></td><td>每次 15–20 分钟、中间起身休息；有心脑血管问题先咨询医生</td></tr>
+        <tr><td><b>地面湿滑</b></td><td>全家穿防滑拖鞋，抱婴儿时注意脚下</td></tr>
+        <tr><td><b>有独立泡池最省心</b></td><td>私汤水温可调、人少卫生，婴儿在房间泡最安全</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="food">
+    <div class="card">
+      <h2><span class="num">8</span>吃什么</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>类型</th><th>推荐</th><th>说明</th></tr>
+          <tr><td>自助/夜市</td><td><b>不夜山谷庙会自助</b>（桑拿鸡、北江鲜、粤式小吃）</td><td>一票通吃</td></tr>
+          <tr><td>当地</td><td>佛冈八刀汤、猪脚粉、客家菜</td><td>街头名片</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="pack">
+    <div class="card">
+      <h2><span class="num">9</span>装备清单（温泉特别版）</h2>
+      <h3>婴儿（11 个月）</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="b1"><label for="b1"><b>游泳尿不湿/防水纸尿裤</b>（进池必备）</label></li>
+        <li><input type="checkbox" id="b2"><label for="b2">连帽浴袍/大浴巾（泡完立刻裹，防受凉）</label></li>
+        <li><input type="checkbox" id="b3"><label for="b3">换洗衣 3 套 + 夹棉连体衣 + 帽子</label></li>
+        <li><input type="checkbox" id="b4"><label for="b4">奶瓶 ×3 + 奶粉 + 保温壶 + 辅食/果泥</label></li>
+        <li><input type="checkbox" id="b5"><label for="b5">尿不湿（6 片/天 ×2 + 备用）、湿巾、隔尿垫</label></li>
+        <li><input type="checkbox" id="b6"><label for="b6">体温计、退烧药、益生菌、婴儿车</label></li>
+      </ul>
+      <h3>女孩 / 奶奶 / 通用</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="g1"><label for="g1">女孩：泳衣、泳帽、防滑拖鞋、小背包、换洗衣 2 套</label></li>
+        <li><input type="checkbox" id="n1"><label for="n1">奶奶：泳衣、防滑拖鞋、常用药、保温杯、薄羽绒</label></li>
+        <li><input type="checkbox" id="c1"><label for="c1">爸妈：泳衣泳裤、防滑拖鞋、防水手机袋</label></li>
+        <li><input type="checkbox" id="c2"><label for="c2">身份证 ×4 + 充电宝 + 现金 200 + 车满油/满电</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="budget">
+    <div class="card">
+      <h2><span class="num">10</span>费用预算（5 人）</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>项目</th><th>明细</th><th>金额</th></tr>
+          <tr><td>交通</td><td>油费 + 过路费约 200</td><td>约 200</td></tr>
+          <tr><td>住宿（含温泉）</td><td>酒店 2 间约 1500–2500；公寓约 700–1100</td><td>约 700–2500</td></tr>
+          <tr><td>温泉</td><td>含住宿则 0；单买约 137×3 + 77</td><td>0–500</td></tr>
+          <tr><td>餐饮</td><td>D1 午 250 / 晚 250；D2 午 250</td><td>约 600–800</td></tr>
+        </table>
+      </div>
+      <div class="totalfoot">合计 ≈ <b>2200 – 3200 元</b>　·　公寓可压到 1800 左右</div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="card">
+      <h2><span class="num">11</span>三个应急预案</h2>
+      <table>
+        <tr><th style="width:30%">情况</th><th>应对</th></tr>
+        <tr><td><b>婴儿泡后着凉/起疹</b></td><td>立即抱出、温水冲洗、擦干裹暖、补水；红疹多因水温高或泡久，严重就停泡</td></tr>
+        <tr><td><b>老人头晕/心慌</b></td><td>扶上岸坐下、喝温水、加衣；避免空腹/酒后泡，控制时长</td></tr>
+        <tr><td><b>变天/下雨</b></td><td>温泉照泡；户外乐园改室内游乐场 + 手工美育空间</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="check">
+    <div class="card">
+      <h2><span class="num">12</span>出行前 Checklist</h2>
+      <ul class="ck">
+        <li><input type="checkbox" id="q1"><label for="q1"><b>T-5 天</b>：订房（优先带私汤房型），确认含温泉 + 婴儿是否免费 + 婴儿床 + 相邻房</label></li>
+        <li><input type="checkbox" id="q2"><label for="q2"><b>T-3 天</b>：查天气；确认温泉当日价格/套餐</label></li>
+        <li><input type="checkbox" id="q3"><label for="q3"><b>T-1 天</b>：加满油；备齐泳衣、游泳尿不湿、防滑拖鞋</label></li>
+        <li><input type="checkbox" id="q4"><label for="q4"><b>当天 08:00</b>：喂奶换尿布装车，导航设「清远佛冈熹乐谷温泉度假区」</label></li>
+        <li><input type="checkbox" id="q5"><label for="q5"><b>12:30–14:30</b>：午睡，别省</label></li>
+        <li><input type="checkbox" id="q6"><label for="q6"><b>15:00–17:30</b>：错峰泡汤，婴儿只泡儿童浅池 10–15 分钟</label></li>
+        <li><input type="checkbox" id="q7"><label for="q7"><b>泡后</b>：全家擦干、加衣、补水再吃饭</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    门票、房价、开放时间均为 2026 年 11 月公开信息，温泉价格套餐差异较大，实际以景区当日公示与酒店确认为准。
+  </footer>
+
+</div>
+</body>
+</html>
