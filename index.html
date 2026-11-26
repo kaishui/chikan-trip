@@ -26,6 +26,11 @@
   }
   a{color:var(--red);text-decoration:none}
 
+  .crosslink{display:block;max-width:860px;margin:16px auto 0;padding:0 18px}
+  .crosslink a{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink);transition:.15s}
+  .crosslink a:hover{border-color:var(--red);transform:translateY(-1px)}
+  .crosslink .arrow{color:var(--red);font-weight:800}
+
   /* hero */
   .hero{
     background:linear-gradient(150deg,#7a2c1b 0%,#b8432f 55%,#c9673f 100%);
@@ -145,7 +150,7 @@
   footer{text-align:center;color:var(--sub);font-size:12.5px;padding:30px 18px 40px;border-top:1px solid var(--line);margin-top:10px}
 
   @media print{
-    .nav,.hero{display:none}
+    .nav,.hero,.crosslink{display:none}
     body{background:#fff}
     .card,.tbl-wrap,.stat{box-shadow:none;border-color:#ddd}
   }
@@ -163,6 +168,10 @@
     <span class="chip">方式 <b>自驾</b> 133 km</span>
     <span class="chip">预算 <b>≈ 2800–3300 元</b></span>
   </div>
+</div>
+
+<div class="crosslink">
+  <a href="https://kaishui.github.io/chikan-trip/lianzhou.html"><span class="arrow">→</span> 看另一份：连州地下河两天一夜亲子游规划（溶洞 + 江景，车程 3.5 小时）</a>
 </div>
 
 <nav class="nav">

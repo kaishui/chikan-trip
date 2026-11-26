@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>连州地下河 · 两天一夜亲子游规划</title>
+<style>
+  :root{
+    --bg:#eef3f0;
+    --card:#fbfdfc;
+    --ink:#22312c;
+    --sub:#5c6b64;
+    --red:#2f6b5e;
+    --red-deep:#1e4d46;
+    --gold:#d98a3d;
+    --line:#d5e0da;
+    --green:#4f7a52;
+    --blue:#3a6b8f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--red);text-decoration:none}
+
+  .crosslink{
+    display:block;max-width:860px;margin:16px auto 0;padding:0 18px;
+  }
+  .crosslink a{
+    display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink);transition:.15s;
+  }
+  .crosslink a:hover{border-color:var(--red);transform:translateY(-1px)}
+  .crosslink .arrow{color:var(--red);font-weight:800}
+
+  .hero{
+    background:linear-gradient(150deg,#163a34 0%,#2f6b5e 55%,#4a8a74 100%);
+    color:#fff;padding:56px 20px 48px;text-align:center;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 40%),
+               radial-gradient(circle at 80% 80%,rgba(255,255,255,.08),transparent 45%);
+    pointer-events:none;
+  }
+  .hero .badge{
+    display:inline-block;font-size:13px;letter-spacing:.2em;padding:6px 14px;
+    border:1px solid rgba(255,255,255,.5);border-radius:999px;margin-bottom:20px;
+    position:relative;z-index:1;
+  }
+  .hero h1{font-size:clamp(26px,5vw,42px);font-weight:800;letter-spacing:.02em;position:relative;z-index:1}
+  .hero .route{margin-top:14px;font-size:16px;opacity:.95;position:relative;z-index:1}
+  .hero .route b{font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px;position:relative;z-index:1}
+  .chip{
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);
+    padding:8px 16px;border-radius:12px;font-size:14px;backdrop-filter:blur(4px);
+  }
+  .chip b{font-weight:700}
+
+  .nav{
+    position:sticky;top:0;z-index:20;background:rgba(238,243,240,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+    display:flex;gap:4px;overflow-x:auto;padding:10px 14px;
+    scrollbar-width:none;
+  }
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{
+    flex:0 0 auto;font-size:13.5px;color:var(--sub);padding:6px 12px;border-radius:999px;
+    white-space:nowrap;transition:.15s;
+  }
+  .nav a:hover{background:var(--red);color:#fff}
+
+  .wrap{max-width:860px;margin:0 auto;padding:26px 18px 60px}
+
+  section{margin-bottom:30px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 22px;box-shadow:0 2px 10px rgba(60,90,80,.05)}
+  h2{font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  h2 .num{
+    display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;
+    background:var(--red);color:#fff;border-radius:9px;font-size:15px;font-weight:800;padding:0 7px;
+  }
+  h3{font-size:16px;font-weight:700;margin:18px 0 8px;color:var(--ink)}
+  p{margin:8px 0;color:var(--ink)}
+  .muted{color:var(--sub);font-size:14px}
+  .lead{font-size:15.5px}
+
+  .callout{border-left:4px solid var(--gold);background:#fdf6e6;border-radius:0 12px 12px 0;padding:14px 16px;margin:14px 0;font-size:14.5px}
+  .callout.warn{border-left-color:var(--red);background:#eaf4f0}
+  .callout.info{border-left-color:var(--blue);background:#eaf2f7}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;background:var(--card);border-radius:12px;overflow:hidden}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:12px 0}
+  .tbl-wrap table{margin:0;border:none}
+  th{background:#e3ece7;color:#3f544b;text-align:left;font-weight:700;padding:10px 12px;white-space:nowrap;font-size:13.5px}
+  td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#f3f8f5}
+  td b,td strong{color:var(--ink)}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:700;white-space:nowrap}
+  .tag.rec{background:#dcebe5;color:var(--red-deep)}
+  .tag.no{background:#e7e0d6;color:#7a6f5f}
+  .tag.good{background:#e4efe2;color:var(--green)}
+
+  .tl{position:relative;padding-left:26px;margin:8px 0 4px}
+  .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .tl-item{position:relative;padding:0 0 16px 12px}
+  .tl-item::before{content:"";position:absolute;left:-22px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--red)}
+  .tl-item.rest::before{border-color:var(--gold);background:var(--gold)}
+  .tl-item.food::before{border-color:var(--green)}
+  .tl-time{font-weight:800;color:var(--red);font-size:14px;letter-spacing:.02em}
+  .tl-item.rest .tl-time{color:#b8862e}
+  .tl-item.food .tl-time{color:var(--green)}
+  .tl-title{font-weight:700;margin:2px 0 2px}
+  .tl-desc{font-size:14px;color:var(--sub)}
+  .tl-desc b{color:var(--ink)}
+
+  .ck{list-style:none}
+  .ck li{position:relative;padding:7px 0 7px 34px;font-size:14.5px;border-bottom:1px dashed var(--line)}
+  .ck li:last-child{border-bottom:none}
+  .ck input{position:absolute;left:0;top:10px;width:20px;height:20px;accent-color:var(--red);cursor:pointer}
+  .ck label{cursor:pointer;display:block}
+  .ck input:checked + label{color:#9aa8a1;text-decoration:line-through}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .stat .v{font-size:24px;font-weight:800;color:var(--red)}
+  .stat .k{font-size:12.5px;color:var(--sub);margin-top:2px}
+
+  .totalfoot{background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;border-radius:14px;padding:20px 22px;margin-top:14px;font-size:15px}
+  .totalfoot b{font-size:22px}
+
+  footer{text-align:center;color:var(--sub);font-size:12.5px;padding:30px 18px 40px;border-top:1px solid var(--line);margin-top:10px}
+
+  @media print{.nav,.hero,.crosslink{display:none}body{background:#fff}.card,.tbl-wrap,.stat{box-shadow:none;border-color:#ddd}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="badge">家庭出行 · 两天一夜</span>
+  <h1>连州地下河亲子游规划</h1>
+  <div class="route">广州 <b>番禺</b> → 清远 <b>连州</b>（地下河 + 湟川三峡）</div>
+  <div class="chips">
+    <span class="chip">成员 <b>5 人</b>（2 大 · 1 老 · 2 小）</span>
+    <span class="chip">日期 <b>11/28 – 11/29</b></span>
+    <span class="chip">自驾 <b>287 km</b> · 约 3.5 h</span>
+    <span class="chip">预算 <b>≈ 2500–2800 元</b></span>
+  </div>
+</div>
+
+<div class="crosslink">
+  <a href="https://kaishui.github.io/chikan-trip/"><span class="arrow">←</span> 看另一份：赤坎古镇两天一夜亲子游规划（车程 1.75 小时，更轻松）</a>
+</div>
+
+<nav class="nav">
+  <a href="#judge">核心判断</a>
+  <a href="#date">日期</a>
+  <a href="#traffic">交通</a>
+  <a href="#hotel">住宿</a>
+  <a href="#ticket">票务</a>
+  <a href="#plan">行程</a>
+  <a href="#cave">地下河提醒</a>
+  <a href="#food">美食</a>
+  <a href="#pack">装备</a>
+  <a href="#budget">预算</a>
+  <a href="#risk">预案</a>
+  <a href="#check">清单</a>
+</nav>
+
+<div class="wrap">
+
+  <section id="judge">
+    <div class="card">
+      <h2><span class="num">0</span>先说实话：连州比赤坎"重"很多</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>对比</th><th>赤坎古镇</th><th>连州</th></tr>
+          <tr><td>单程距离</td><td>133 km</td><td><b>约 287 km</b></td></tr>
+          <tr><td>单程车程</td><td>1 小时 45 分</td><td><b>约 3.5 小时</b></td></tr>
+          <tr><td>往返路上</td><td>约 3.5 小时</td><td><b>约 7 小时</b></td></tr>
+          <tr><td>主打</td><td>古镇慢游 + 夜场演艺</td><td>溶洞 + 江景游船</td></tr>
+          <tr><td>昼夜温差</td><td>13–26℃</td><td><b>9–22℃（夜里更低）</b></td></tr>
+        </table>
+      </div>
+      <div class="callout warn">连州两天一夜是<b>偏紧凑</b>的行程，路上就吃掉 7 小时。带 11 个月婴儿 + 61 岁老人，必须<b>只保一个核心</b>（连州地下河），且<b>单程 3.5 小时中途停一次服务区</b>。想看顶级溶洞、孩子想看"哇"的东西，连州值得跑；只想轻松，选赤坎。</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2><span class="num">1</span>三个关键判断</h2>
+      <table>
+        <tr><th style="width:22%">判断</th><th>做法</th><th>为什么</th></tr>
+        <tr><td><b>① 只保一个 5A</b></td><td>地下河为主，湟川三峡放次日上午，玻璃桥跳过</td><td>地下河是全国顶级溶洞、连州招牌；520 米玻璃桥对婴儿和老人不友好</td></tr>
+        <tr><td><b>② 洞内外温差穿对</b></td><td>洞内恒温 18℃ 湿冷，婴儿和老人备夹棉外套 + 帽子</td><td>洞外 22℃、洞内 18℃ 又湿又滑，最容易着凉或滑倒</td></tr>
+        <tr><td><b>③ 车程按 3.5 小时 + 1 次服务区</b></td><td>7:30 前出发，中途停 20 分钟</td><td>婴儿坐不住 3.5 小时，不停一次后半程必闹</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="date">
+    <div class="card">
+      <h2><span class="num">2</span>日期与天气</h2>
+      <p class="muted">连州这周末天气很好、无雨，但早晚寒凉（夜里最低 9℃）。</p>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>日期</th><th>天气</th><th>气温</th><th>提醒</th></tr>
+          <tr><td><b>11/28（六）</b></td><td>晴转多云</td><td>9–22℃</td><td><span class="tag rec">出发日</span> 白天舒服，早晚加衣</td></tr>
+          <tr><td><b>11/29（日）</b></td><td>多云</td><td>11–24℃</td><td><span class="tag good">返程日</span> 适合坐船</td></tr>
+          <tr><td>12/1 起</td><td>多云转小雨</td><td>14–26℃</td><td><span class="tag no">之后连续有雨</span> 本周末是近期最好窗口</td></tr>
+        </table>
+      </div>
+      <div class="callout">连州比珠三角冷一个台阶，夜里 9–12℃。婴儿带<b>夹棉连体衣 + 帽子</b>，老人带毛衣 + 外套，白天热了再脱。</div>
+    </div>
+  </section>
+
+  <section id="traffic">
+    <div class="card">
+      <h2><span class="num">3</span>怎么去：自驾</h2>
+      <div class="grid2" style="margin-bottom:14px">
+        <div class="stat"><div class="v">287 km</div><div class="k">单程距离</div></div>
+        <div class="stat"><div class="v">约 3.5h</div><div class="k">单程车程</div></div>
+      </div>
+      <table>
+        <tr><th>方式</th><th>时长</th><th>成本（往返）</th><th>评价</th></tr>
+        <tr><td><b>自驾</b> <span class="tag rec">推荐</span></td><td>约 3.5 小时</td><td>过路费约 300 + 油费约 400，约 <b>660–740 元</b></td><td>门到门，婴儿车、行李、厚衣服全装车</td></tr>
+        <tr><td>高铁</td><td>无直达，需广州→清远再转 1 小时汽车</td><td>转乘复杂</td><td>带婴儿 + 大件行李不现实</td></tr>
+      </table>
+      <h3>自驾要点</h3>
+      <ul class="ck" style="list-style:none">
+        <li style="padding-left:20px">路线选<b>广连高速（S1）</b>：番禺 → 华南快速（S4）→ 广连高速 → 连州。路新、车道宽、隧道多但车少，周末不易堵。</li>
+        <li style="padding-left:20px">导航设「<b>连州地下河游客中心</b>」，停车 10 元/天，P1 有充电桩。</li>
+        <li style="padding-left:20px"><b>7:30 前出发</b>，避开 8 点后出城高峰；<b>9:15 左右进服务区停 20 分钟</b>喂奶换尿布。</li>
+        <li style="padding-left:20px">广连高速隧道极多，过隧道给婴儿喝奶/喂水（吞咽平衡耳压）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="hotel">
+    <div class="card">
+      <h2><span class="num">4</span>住宿：5 个人怎么住</h2>
+      <p>连州住宿比赤坎便宜一半，市区酒店吃饭、医疗、停车都方便。</p>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>酒店</th><th>位置</th><th>价格/间</th><th>带娃优势</th><th>适合度</th></tr>
+          <tr><td><b>连州大酒店</b> <span class="tag rec">首选</span></td><td>市中心，距慧光塔 800m</td><td>约 238（4 星）</td><td>有三人房、零压床垫、近美食街</td><td>★★★★★</td></tr>
+          <tr><td><b>安达印象酒店</b></td><td>连江路，近美食街/三峡</td><td>约 173 起</td><td>免费儿童乐园、亲子房、室内泳池</td><td>★★★★☆</td></tr>
+          <tr><td>龙潭客栈 / 度假酒店</td><td>龙潭古镇内</td><td>400–500</td><td>江景、古镇氛围</td><td>★★★☆☆（离地下河远）</td></tr>
+          <tr><td>温德姆温泉度假酒店</td><td>瑶安瑶族乡（5 星）</td><td>较高</td><td>温泉别墅、品质高</td><td>★★★☆☆（离景点都远）</td></tr>
+        </table>
+      </div>
+      <p><b>房型分配：</b>连州大酒店「三人房」给爸爸 + 奶奶 + 女孩，「大床房」给妈妈 + 婴儿；安达印象订「亲子房」+「双床房」。</p>
+      <h3>订房必问</h3>
+      <ul class="ck" style="list-style:none">
+        <li style="padding-left:20px">① 有无婴儿床 / 床围；② 两间能否同楼层相邻；③ 停车是否免费。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ticket">
+    <div class="card">
+      <h2><span class="num">5</span>票务（连州没有"住店免票"）</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>景区</th><th>成人</th><th>儿童/老人（60–69 岁）</th><th>免票</th></tr>
+          <tr><td><b>连州地下河</b>（5A）</td><td>108（线上）/ 120（现场）</td><td>60 元</td><td>1.2 米以下、70 岁以上</td></tr>
+          <tr><td><b>湟川三峡</b>（4A）</td><td>44 元</td><td>25 元</td><td>1.2 米以下</td></tr>
+        </table>
+      </div>
+      <p class="muted">联票（地下河+三峡）160 元，比分开买（152 元）贵 8 元，<b>建议分开买</b>。地下河含陆路徒步 + 暗河游船 + 讲解。下山魔毯 20 元可选。</p>
+      <h3>你家的账</h3>
+      <table>
+        <tr><th>人</th><th>地下河</th><th>湟川三峡</th></tr>
+        <tr><td>爸爸 / 妈妈</td><td>108 ×2 = 216</td><td>44 ×2 = 88</td></tr>
+        <tr><td>奶奶（61 岁）</td><td>60</td><td>25</td></tr>
+        <tr><td>7 岁女孩（1.2–1.5 米）</td><td>60</td><td>25</td></tr>
+        <tr><td>11 个月婴儿</td><td>免票</td><td>免票</td></tr>
+        <tr><td><b>合计</b></td><td><b>336 元</b></td><td><b>138 元</b></td></tr>
+      </table>
+      <div class="callout">门票合计 <b>约 474 元</b>。半价票和免票现场出示证件（奶奶身份证；女孩超 1.5 米按成人）。线上提前买成人票省 12 元/人。</div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="card">
+      <h2><span class="num">6</span>两天行程</h2>
+      <h3 style="color:var(--red)">Day 1 · 11/28（周六）溶洞为主，晚上早点睡</h3>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-time">07:30</div><div class="tl-title">番禺出发</div><div class="tl-desc">出发前喂奶换尿布，婴儿车上睡第一觉。</div></div>
+        <div class="tl-item rest"><div class="tl-time">09:15–09:35</div><div class="tl-title">服务区休息</div><div class="tl-desc">喂奶换尿布、老人下车活动，这是后半程不闹的关键。</div></div>
+        <div class="tl-item food"><div class="tl-time">10:45–11:45</div><div class="tl-title">早午餐 · 东陂腊味煲仔饭</div><div class="tl-desc">东陂腊味是连州招牌，连州牛蹄也值得点。</div></div>
+        <div class="tl-item"><div class="tl-time">12:00</div><div class="tl-title">到连州地下河</div><div class="tl-desc">淡季 16:00 停止入园，下午入园人少、游船不排队。</div></div>
+        <div class="tl-item"><div class="tl-time">12:00–14:30</div><div class="tl-title">连州地下河（水陆双游）</div><div class="tl-desc">走「亲子老人平缓线」：陆路溶洞（仙人梯田、寿星石笋、地下瀑布）→ 底层码头坐 40 分钟暗河游船 → 出洞。</div></div>
+        <div class="tl-item rest"><div class="tl-time">14:30–15:00</div><div class="tl-title">出洞喂奶 · 加衣服</div><div class="tl-desc">洞内外温差大，出洞别急着脱外套。</div></div>
+        <div class="tl-item"><div class="tl-time">15:00–15:40</div><div class="tl-title">驱车回市区</div><div class="tl-desc">约 30 分钟，婴儿在车上小睡。</div></div>
+        <div class="tl-item rest"><div class="tl-time">15:40–17:00</div><div class="tl-title">入住酒店 + 午睡</div><div class="tl-desc">老人婴儿补觉，女孩跟爸爸去酒店儿童乐园。</div></div>
+        <div class="tl-item"><div class="tl-time">17:00–17:50</div><div class="tl-title">慧光塔 + 中山公园</div><div class="tl-desc">就在酒店附近步行可达，老塔免费、公园平缓好推车。</div></div>
+        <div class="tl-item food"><div class="tl-time">18:00–19:00</div><div class="tl-title">晚餐 · 连州菜心 + 牛蹄 + 河鲜</div><div class="tl-desc">连州菜心冬季正当时。</div></div>
+        <div class="tl-item"><div class="tl-time">19:30</div><div class="tl-title">婴儿洗澡睡觉</div><div class="tl-desc">早睡，第二天赶早坐船。</div></div>
+      </div>
+
+      <h3 style="color:var(--red)">Day 2 · 11/29（周日）游船江景，午饭后返程</h3>
+      <div class="tl">
+        <div class="tl-item food"><div class="tl-time">07:30–08:30</div><div class="tl-title">酒店早餐</div><div class="tl-desc">吃饱点，中午晚点吃。</div></div>
+        <div class="tl-item"><div class="tl-time">08:45</div><div class="tl-title">退房装车</div><div class="tl-desc">行李全放后备箱，轻装去坐船。</div></div>
+        <div class="tl-item"><div class="tl-time">09:15–10:45</div><div class="tl-title">湟川三峡游船（约 1 小时）</div><div class="tl-desc">露天游船，两岸峡谷瀑布。婴儿注意江风保暖、戴帽子；<b>玻璃桥不上去</b>。</div></div>
+        <div class="tl-item"><div class="tl-time">10:45–11:20</div><div class="tl-title">龙潭古镇 · 河畔慢走</div><div class="tl-desc">平缓出片，老人坐着看江景。</div></div>
+        <div class="tl-item food"><div class="tl-time">11:20–12:10</div><div class="tl-title">午餐（简餐）</div><div class="tl-desc">河鲜、农家菜，出餐快。</div></div>
+        <div class="tl-item"><div class="tl-time">12:30</div><div class="tl-title">出发返程</div><div class="tl-desc">婴儿上车就睡，接午觉。</div></div>
+        <div class="tl-item rest"><div class="tl-time">14:15–14:35</div><div class="tl-title">服务区休息一次</div><div class="tl-desc">喂奶换尿布、老人活动。</div></div>
+        <div class="tl-item"><div class="tl-time">16:15</div><div class="tl-title">到家</div><div class="tl-desc">早到家 = 早洗澡 = 晚上不闹。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cave">
+    <div class="card">
+      <h2><span class="num">7</span>地下河：带婴儿 + 老人的注意事项</h2>
+      <table>
+        <tr><th style="width:34%">风险点</th><th>具体做法</th></tr>
+        <tr><td><b>洞内 18℃ 湿冷</b></td><td>婴儿穿夹棉连体衣 + 帽子 + 袜子；老人穿抓绒/薄羽绒，出洞再脱</td></tr>
+        <tr><td><b>地面湿滑 + 台阶</b></td><td>婴儿车进不去，全程背带抱娃；奶奶穿防滑鞋（溶洞常年滴水）</td></tr>
+        <tr><td><b>暗河游船黑 + 水声 + 回音</b></td><td>婴儿可能害怕，背带抱紧、贴胸安抚、可奶睡；由爸爸抱坐船中间</td></tr>
+        <tr><td><b>陆路 1.8km 有上下坡</b></td><td>全程单向不折返；老人放慢节奏，出口有下山魔毯（20 元）省力</td></tr>
+        <tr><td><b>婴儿状态不好</b></td><td>游客中心有休息区，爸爸带婴儿在洞外等，妈妈陪老人和女孩进洞</td></tr>
+      </table>
+      <p class="muted">淡季开放 09:00–16:30，16:00 停止入园。下午 12:00–13:00 入园人最少，避开上午旅行团高峰。</p>
+    </div>
+  </section>
+
+  <section id="food">
+    <div class="card">
+      <h2><span class="num">8</span>吃什么</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>类型</th><th>推荐</th><th>人均</th><th>说明</th></tr>
+          <tr><td>招牌（必吃）</td><td><b>东陂腊味煲仔饭</b>、连州牛蹄</td><td>40–60</td><td>东陂腊味是连州名产，煲仔饭小孩爱吃</td></tr>
+          <tr><td>蔬菜</td><td>连州菜心</td><td>20–30</td><td>冬季正当时，清甜脆爽</td></tr>
+          <tr><td>小吃</td><td>水角、酿豆腐</td><td>15–25</td><td>路边摊边走边吃</td></tr>
+          <tr><td>水产</td><td>湟川河鲜（清蒸鱼）</td><td>50–80</td><td>第二天午餐</td></tr>
+          <tr><td>婴儿</td><td>自带米粉/果泥 + 保温壶</td><td>—</td><td>餐厅可要热水</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="pack">
+    <div class="card">
+      <h2><span class="num">9</span>装备清单（连州加强版）</h2>
+      <h3>婴儿（11 个月）</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="b1"><label for="b1"><b>夹棉连体衣 ×2 + 帽子 + 袜子</b>（洞内 18℃、夜里 9℃）</label></li>
+        <li><input type="checkbox" id="b2"><label for="b2"><b>背带</b>（溶洞、游船全程靠它）</label></li>
+        <li><input type="checkbox" id="b3"><label for="b3">奶瓶 ×3 + 奶粉 + 保温壶（70℃ 水冲奶）</label></li>
+        <li><input type="checkbox" id="b4"><label for="b4">辅食 / 果泥 / 米饼 + 小勺围兜</label></li>
+        <li><input type="checkbox" id="b5"><label for="b5">尿不湿（6 片/天 ×2 + 备用 5 片）、湿巾、隔尿垫</label></li>
+        <li><input type="checkbox" id="b6"><label for="b6">大轮可平躺婴儿车（仅市区、酒店、公园平路）</label></li>
+        <li><input type="checkbox" id="b7"><label for="b7">体温计、退烧药、益生菌、创可贴</label></li>
+        <li><input type="checkbox" id="b8"><label for="b8">小毯子（车上 + 游船防风）</label></li>
+      </ul>
+      <h3>7 岁女孩 / 奶奶 / 通用</h3>
+      <ul class="ck">
+        <li><input type="checkbox" id="g1"><label for="g1">女孩：运动鞋 + 遮阳帽 + 外套 + 小背包</label></li>
+        <li><input type="checkbox" id="n1"><label for="n1">奶奶：防滑鞋 + 抓绒/薄羽绒 + 折叠小板凳 + 常用药</label></li>
+        <li><input type="checkbox" id="c1"><label for="c1">身份证 ×4 + 充电宝 + 现金 200 + 车满油/满电</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="budget">
+    <div class="card">
+      <h2><span class="num">10</span>费用预算（5 人）</h2>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>项目</th><th>明细</th><th>金额</th></tr>
+          <tr><td>交通</td><td>过路费约 300 + 油费约 400 + 停车约 20</td><td>约 700–740</td></tr>
+          <tr><td>住宿</td><td>三人房 + 大床房（或亲子房 + 双床房）</td><td>约 450–550</td></tr>
+          <tr><td>门票</td><td>地下河 336 + 湟川三峡 138</td><td>约 474</td></tr>
+          <tr><td>餐饮</td><td>D1 午 250 / 晚 250；D2 午 250</td><td>约 700–800</td></tr>
+          <tr><td>杂项</td><td>魔毯（可选 20）、零食、应急</td><td>约 150–200</td></tr>
+        </table>
+      </div>
+      <div class="totalfoot">合计 ≈ <b>2500 – 2800 元</b>　·　住宿比赤坎便宜，总花费反而略低，代价是多 3.5 小时车程</div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="card">
+      <h2><span class="num">11</span>三个应急预案</h2>
+      <table>
+        <tr><th style="width:30%">情况</th><th>应对</th></tr>
+        <tr><td><b>婴儿车上哭闹 / 耳朵不适</b></td><td>隧道多，过隧道喂水/喂奶平衡耳压；哭闹厉害就近下服务区安抚</td></tr>
+        <tr><td><b>洞内婴儿受惊 / 受凉</b></td><td>爸爸抱出洞（跟工作人员说明可提前带出），外面加衣喂温水，妈妈陪老人女孩继续</td></tr>
+        <tr><td><b>老人地下河走不动</b></td><td>走平缓线放慢节奏，出口乘下山魔毯；吃力就通知景区工作人员协助</td></tr>
+        <tr><td><b>天气骤冷 / 变天</b></td><td>早晚加够衣服；预报变雨，湟川三峡改室内备选（连州博物馆、慧光塔）</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="check">
+    <div class="card">
+      <h2><span class="num">12</span>出行前 Checklist</h2>
+      <ul class="ck">
+        <li><input type="checkbox" id="q1"><label for="q1"><b>T-5 天</b>：订房（确认婴儿床 + 相邻房）</label></li>
+        <li><input type="checkbox" id="q2"><label for="q2"><b>T-3 天</b>：查天气；线上买地下河成人票（108 元）</label></li>
+        <li><input type="checkbox" id="q3"><label for="q3"><b>T-1 天</b>：加满油/充满电，婴儿装备单独一包，下载离线地图</label></li>
+        <li><input type="checkbox" id="q4"><label for="q4"><b>当天 07:00</b>：喂奶换尿布装车，导航设「连州地下河游客中心」</label></li>
+        <li><input type="checkbox" id="q5"><label for="q5"><b>9:15</b>：服务区停一次（喂奶换尿布）</label></li>
+        <li><input type="checkbox" id="q6"><label for="q6"><b>12:00 前</b>：抵达地下河（淡季 16:00 停止入园）</label></li>
+        <li><input type="checkbox" id="q7"><label for="q7"><b>退房当天</b>：行李装车后再去坐船</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    门票、开放时间、房价均为 2026 年 11 月公开信息，实际以景区当日公告与酒店确认为准。<br>
+    连州地下河淡季（11–3 月）09:00–16:30 开放，16:00 停止入园。
+  </footer>
+
+</div>
+</body>
+</html>
